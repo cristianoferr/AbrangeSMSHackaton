@@ -37,9 +37,11 @@ function updateEstado(req, res, next) {
   logger.winston.info('sample.updateEstado');
   const sigla = req.params.sigla;
   let nome = req.body.nome;
-  let estado = jsonloader.getData("estados").find(x => x.sigla == sigla)
+  let estados = jsonloader.getData("estados");
+  let estado = estados.find(x => x.sigla == sigla)
   if (estado && nome) {
     estado.nome = nome;
+    jsonloader.updateData("estados", estados);
     res.status(200).json({
       status: 'success',
       message: 'Estado Atualizado'
@@ -73,6 +75,7 @@ function createEstado(req, res, next) {
   let estados = jsonloader.getData("estados");
   if (!estados.find(x => x.sigla == sigla)) {
     estados.push({ sigla: sigla.toUpperCase(), nome: nome });
+    jsonloader.updateData("estados", estados);
     res.status(200).json({
       status: 'success',
       message: 'Estado Includo'
