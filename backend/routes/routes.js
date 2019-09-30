@@ -4,7 +4,7 @@ const jsonloader = require('./db/jsonloader');
 
 const sample = require('./sample/sample');
 
-router.get('/estados', sample.getEstados);
+router.get('/Estados', sample.getEstados);
 
 //Exemplos:
 //const agents = require('../db/agents');

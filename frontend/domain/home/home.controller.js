@@ -13,7 +13,8 @@ sap.ui.define(['templateHackaton/shared/baseController'],
 				that.getRouter().getRoute('routeAppHome').attachPatternMatched(
 					onRouteOrSubRoutesMatched);
 			},
-
+			onOpenDialog,
+			estadoService
 
 
 		});
@@ -27,6 +28,10 @@ sap.ui.define(['templateHackaton/shared/baseController'],
 
 		}
 
+		function onOpenDialog(evt){
+			estadoService.bind(that);
+			estadoService.onAbreDialog(evt.getSource());
+		}
 
 
 	});

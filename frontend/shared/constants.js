@@ -8,7 +8,7 @@ var constants = (function () {
 	'use strict';
 
 	return {
-		VALOR_EXEMPLO: 'EXEMPLO'
+		TAMANHO_MAXIMO_COMBO_SEM_FILTRO:100
 	};
 
 

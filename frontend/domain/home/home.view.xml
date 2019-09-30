@@ -3,18 +3,11 @@
 	xmlns:l="sap.ui.layout"
 	xmlns="sap.m" controllerName="templateHackaton.domain.home.home" 
 	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
-		<Page showHeader="false" enableScrolling="false">
+		<Page  showHeader="true" enableScrolling="true" title="{i18n>appTitulo}">
 		<headerContent>
 			<Image class="imagemCabecalhoPetrobras" src="content/images/marca_petrobras.png" />
-			<Image class="logoCabecalhoPetrobras" src="content/logo_petrobras.png" />
+			<Image class="logoCabecalhoPetrobras" src="content/images/logo_petrobras.png" />
 		</headerContent>
-		<!-- botao que abre a pagina about -->
-		<FlexBox alignItems="Start" justifyContent="End">
-			<items>
-				<Button icon= "sap-icon://action-settings" type= "Transparent" />
-			</items>
-		</FlexBox>
-		<!-- fim do botao que abre a pagina about -->
 		<!--titulos rotativos -->
 		<html:section class="rw-wrapper">
 			<html:h2 class="rw-sentence">
@@ -30,7 +23,9 @@
 
 		<!-- Cards com os principais templates -->
 		<TileContainer id="container" class= "imagemRodapeInicio">
-			<StandardTile id ="tileMasterDetail" icon= "sap-icon://hint" type="monitor" title= "{i18n>dominio1}" press="navToSimpleMasterDetail" />
+			<StandardTile id ="tileMasterDetail" icon= "sap-icon://hint" 
+			 title= "Exemplo Dialog"
+			 press="onOpenDialog" />
 
 			<StandardTile id ="tileGraphics" icon= "sap-icon://factory" number="1" title="{i18n>dominio2}" info="{i18n>dominio2.tileInfo}" press="navToSimpleGraphics"/>
 

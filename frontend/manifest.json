@@ -21,8 +21,8 @@
             "viewModelDs": {
                 "type": "JSON"
             },
-            "mockService": {
-                "uri": "mock/mockData.json",
+            "mainService": {
+                "uri": "/api",
                 "type": "JSON"
             },
             "init_dominio": {
@@ -81,11 +81,12 @@
                 "type": "sap.ui.model.json.JSONModel",
                 "dataSource": "init_dominio"
             },
-            "":  {
-                "dataSource": "mockService",
+            "": {
+                "type": "templateHackaton.shared.model.RESTModel",
+                "dataSource": "mainService",
                 "settings": {
-                    "defaultBindingMode": "TwoWay",
-                    "useBatch": false
+                    "listProperty": "",
+                    "listSuffix": ""
                 }
             },
             "device": {
@@ -136,6 +137,10 @@
                 }
             ],
             "js": [
+                {
+                    "uri": "domain/estados/estadoService.js",
+                    "id": "estadoService"
+                },
                   {
                     "uri": "shared/moment.min.js",
                     "id": "momentjs"
