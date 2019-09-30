@@ -1,6 +1,8 @@
 # SAPUI5Empty
 Template do Projeto Hackaton
 
+## CLONANDO REPOSITÓRIO
+- git clone https://github.com/cristianoferr/AbrangeSMSHackaton.git
 
 ## PRÉ-REQUISITOS:
 - Framework OpenUI5 (framework aberto mantido pela SAP): https://openui5.org/releases/
