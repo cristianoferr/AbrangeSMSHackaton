@@ -19,7 +19,7 @@
 		<!-- Cards com os principais templates -->
 		<TileContainer id="container" class= "imagemRodapeInicio">
 			<StandardTile id ="tileMasterDetail" icon= "sap-icon://hint" 
-			 title= "Exemplo Dialog"
+			 title= "Exemplo Crud básico"
 			 press="onOpenDialog" />
 		</TileContainer>
 

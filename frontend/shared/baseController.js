@@ -17,10 +17,54 @@ sap.ui.define(
 				getRouter: getRouter,
 				onNavBack: onNavBack,
 				getI18NTranslation: getI18NTranslation,
-				navigateToRoute: navigateToRoute
+				navigateToRoute: navigateToRoute,
+				findById,
+				getProperty,
+				setProperty,
+				getModel
 
 			}
 		);
+
+		/**
+	 * função genérica para setar a propriedade de um modelo
+	 */
+	function setProperty(property, value) {
+		let arrProps = property.split(">");
+		if (arrProps.length == 1) {
+			return this.getModel().setProperty(property, value);
+		}
+		return this.getModel(arrProps[0]).setProperty(arrProps[1], value);
+	}
+
+	/**
+	 * função genérica para retornar a propriedade de um modelo
+	 */
+	function getProperty(property) {
+		let arrProps = property.split(">");
+		if (arrProps.length == 1) {
+			return this.getModel().getProperty(property);
+		}
+		return this.getModel(arrProps[0]).getProperty(arrProps[1]);
+	}
+
+	/**
+         * Retorna o model da view com o nome informado
+         * @param {string} [modelName]   (opcional)
+         */
+		function getModel(modelName) {
+			return this.getView().getModel(modelName);
+		}
+
+	/**
+	 * retorna um filho que tenha o sId identificado (nem sempre o byId funciona como deveria)
+	 * @param {*} sId 
+	 */
+	function findById(sId) {
+		let list = this.getView().findElements(true).filter(x => x.sId == sId);
+		if (list.length == 1) return list[0];
+		return null;
+	}
 
 		/** Responsável por obter o objeto roteador do SAPUI5. Através dele é possível navegar para as diferentes rotas configuradas no manifest.js.
 		 * @function getRouter

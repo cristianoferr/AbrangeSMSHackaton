@@ -151,13 +151,12 @@ sap.ui.define([
         }
     }
 
-    function remove(sPath, oData, mParameters) {
+    function remove(sPath, mParameters) {
         let that = this;
         jQuery.ajax(
             {
                 url: that.servicePath + sPath,
                 type: "DELETE",
-                data: JSON.stringify(oData),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 async: true,
@@ -180,10 +179,10 @@ sap.ui.define([
 
     
     function update(sPath, oData, mParameters) {
-        executaAjax(sPath, oData, mParameters,"PATCH");
+        executaAjax.call(this,sPath, oData, mParameters,"PUT");
     }
     function create(sPath, oData, mParameters) {
-        executaAjax(sPath, oData, mParameters,"POST");
+        executaAjax.call(this,sPath, oData, mParameters,"POST");
     }
 
     function executaAjax(sPath, oData, mParameters,metodoType) {

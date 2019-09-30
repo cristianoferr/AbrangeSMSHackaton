@@ -32,9 +32,9 @@ var dialogService = (function () {
 	function errorService(error) {
 		let mensagemErro = error.responseText;
 		//vou fazer um tratamento melhor de erro nesses casos:
-		if (mensagemErro.indexOf("{\"error\":") == 0) {
+		if (mensagemErro.indexOf("{\"status\":\"error\"") == 0) {
 			let objError = JSON.parse(error.responseText);
-			mensagemErro = objError.error.message.value;
+			mensagemErro = objError.message;
 		}
 		dialogErro("excecoes.tituloErroRequisicao", "Erro retornado:" + mensagemErro);
 		console.error(error);

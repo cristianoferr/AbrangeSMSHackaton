@@ -9,30 +9,37 @@
     <Dialog id="poListaDialogs"
     resizable="true" draggable="true" 
 		title="Estados"
-        contentWidth="40%" contentHeight="auto"
+        contentWidth="60%" contentHeight="auto"
 		class="sapUiContentPadding"
 		>
         
         <Table width="100%" 
                 id="tableEstados"
-                items="{path:'/Estados'}"
+                items="{path:'/Estados', sorter: { 
+                                        path: 'sigla',
+                                        descending: false,
+                                        group:false }}"
                 noDataText="Nenhum campo definido"
                 fixedLayout="false"
                 growing="false">
                 <columns>
                     <Column width="5rem" hAlign="Right" vAlign="Center"></Column>
-                    <Column hAlign="Left"></Column>
+                    <Column width="100%" hAlign="Left"></Column>
+                    <Column width="5rem" hAlign="Left"></Column>
                 </columns>
                 <ColumnListItem >
-                    <Label text="{sigla}"/>
-                    <Label text="{nome}"/>
-                    
+                    <Input editable="false" value="{sigla}"/>
+                    <Input value="{nome}"/>
+                    <l:HorizontalLayout>
+                        <Button type="Emphasized" app:sigla="{sigla}" icon="sap-icon://save" text="" press=".estadoService.onSalvar"/>
+                        <Button type="Reject" app:sigla="{sigla}" icon="sap-icon://delete" text="" press=".estadoService.onExcluir"/>
+                    </l:HorizontalLayout>
                 </ColumnListItem>
             </Table> 
 
 
         <beginButton>
-            <Button icon="sap-icon://accept" type="Emphasized" text="Salvar" press=".estadoService.onFechaDialogo"/>
+            <Button icon="sap-icon://add" type="Emphasized" text="Novo Estado" press=".estadoService.onNovoEstado"/>
         </beginButton>
         <endButton>
             <Button icon="sap-icon://decline" type="Transparent" press=".estadoService.onFechaDialogo"/>

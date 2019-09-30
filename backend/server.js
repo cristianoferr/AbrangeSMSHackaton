@@ -18,7 +18,7 @@ app.use(
         extended: true
     })
 );
-
+app.use(bodyParser.json({ limit: '2mb' }));
 
 //app.use(bodyParser.json({ limit: '2mb' }));
 app.use('/', express.static(rootPath));
