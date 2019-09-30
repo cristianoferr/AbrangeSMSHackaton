@@ -1,0 +1,164 @@
+{
+    "_version": "{{appVersion}}",
+    "start_url": "index.html",
+    "sap.app": {
+        "id": "templateHackaton",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "{{appVersion}}"
+        },
+        "title": "{{appTitulo}}",
+        "description": "{{appDescricao}}",
+        "sourceTemplate": {
+            "id": "ui5template.basicSAPUI5ApplicationProject",
+            "version": "1.38.11"
+        },
+        "dataSources": {
+            "deviceDs": {
+                "type": "JSON"
+            },
+            "viewModelDs": {
+                "type": "JSON"
+            },
+            "mockService": {
+                "uri": "mock/mockData.json",
+                "type": "JSON"
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_bluecrystal",
+            "sap_belize"
+        ]
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "templateHackaton.layout.app",
+            "type": "XML"
+        },
+        "dependencies": {
+            "minUI5Version": "1.30.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {},
+                "sap.ushell": {},
+                "sap.collaboration": {},
+                "sap.ui.comp": {},
+                "sap.uxap": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "projectNameSpace.i18n.i18n"
+                }
+            },
+            "authModel": {
+                "dataSource": "authServiceDs",
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "useBatch": false
+                }
+            },
+            "": {
+                "dataSource": "mockService"
+            },
+            "deviceModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "deviceDs",
+                "settings": {
+                    "defaultBindingMode": "OneWay"
+                }
+            },
+            "viewModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "viewModelDs",
+                "settings": {
+                    "defaultBindingMode": "TwoWay"
+                }
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "transition": "slide",
+                "bypassed": {
+                    "target": "notFound"
+                }
+            },
+            "routes": [
+                {
+                    "pattern": "callcenter",
+                    "name": "routeCallcenter",
+                    "target": "tgCallcenter"
+                }
+            ],
+            "targets": {
+                "tgCallcenter": {
+                    "viewPath": "templateHackaton.domain.callcenter",
+                    "viewName": "callcenter",
+                    "viewLevel": 1
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "content/css/style.css"
+                }
+            ],
+            "js": [
+                  {
+                    "uri": "shared/moment.min.js",
+                    "id": "momentjs"
+                },
+                {
+                    "uri": "shared/dialogService.js",
+                    "id": "dialogService"
+                },
+                {
+                    "uri": "shared/formatter.js",
+                    "id": "formatter"
+                },
+                {
+                    "uri": "shared/toolsService.js",
+                    "id": "toolsService"
+                },
+                {
+                    "uri": "shared/constants.js",
+                    "id": "constants"
+                },
+                {
+                    "uri": "shared/seguranca/userService.js",
+                    "id": "userService"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,26 @@
+<core:View xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m" controllerName="templateHackaton.domain.callcenter.callcenter" 
+	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
+	<Page showHeader="true" enableScrolling="false" title="">
+		<headerContent>
+			<Image class="imagemCabecalhoPetrobras" src="{device>/rootPath}content/images/marca_petrobras.png" />
+			<Image class="logoCabecalhoPetrobras" src="{device>/rootPath}content/logo_petrobras.png" />
+		</headerContent>
+
+	<ObjectHeader
+		title="Central de Relacionamento">
+		
+		<attributes>
+			<ObjectAttribute text="Opção 1 - AMS 24 horas - 7 dias por semana" />
+			<ObjectAttribute text="Opções 2 e 3 - 7h00 as 19h00 - segunda à sexta" />
+			<ObjectAttribute text="{Description}" />
+			<ObjectAttribute
+				text="0800 287 2267"
+				active="true"
+				press="onCallcenter" />
+		</attributes>
+	</ObjectHeader>				
+	</Page>
+</core:View>

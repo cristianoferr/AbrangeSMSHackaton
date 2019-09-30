@@ -1,0 +1,55 @@
+{
+    "name": "templateHackaton",
+    "version": "1.0.0",
+    "description": "Template usado no Hackaton",
+    "dependencies": {
+        "adal-angular": "^1.0.17",
+        "amqplib": "^0.5.3",
+        "bluebird": "^3.5.3",
+        "body-parser": "^1.18.3",
+        "bootstrap": "latest",
+        "chart.js": "^2.7.3",
+        "cors": "^2.8.5",
+        "express": "^4.16.4",
+        "express-jwt": "^5.3.1",
+        "http-proxy-middleware": "^0.17.4",
+        "jquery": "3.1.1",
+        "jsonformatter": "^0.6.0",
+        "jsonwebtoken": "^8.4.0",
+        "ng-file-upload": "^12.2.13",
+        "ng-jsyaml": "0.0.2",
+        "ng-tags-input": "^3.2.0",
+        "ngstorage": "^0.3.11",
+        "node-cache": "^4.2.0",
+        "passport-azure-ad": "^4.0.0",
+        "pg-promise": "^8.5.5",
+        "popper.js": "latest",
+        "request": "^2.88.0",
+        "simple-line-icons": "^2.4.1",
+        "simplemde": "^1.11.2",
+        "tether": "latest",
+        "winston": "^3.2.1",
+        "xdate": "latest",
+        "yaml": "^1.3.2"
+    },
+    "config": {
+        "servePort": "8080",
+        "frontendPath": "../frontend",
+        "resourcesPath": "G:/sap/resources/openui5-runtime-1.60.19/resources",
+        "coresecuritytoken": "",
+        "corejwttoken": "",
+        "nlusecuritytoken": "",
+        "cacheagents": true,
+        "loglevel": "info"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "start:local": "node --inspect server.js "
+    },
+    "author": "Cristiano Ferreira ",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/???"
+    }
+}

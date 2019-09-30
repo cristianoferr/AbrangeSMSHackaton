@@ -1,0 +1,5 @@
+<mvc:View controllerName="templateHackaton.shared.notFound.notFound" 
+    xmlns="sap.m" 
+    xmlns:mvc="sap.ui.core.mvc">
+    <MessagePage title="{i18n>notFound.titulo}" text="{i18n>notFound.texto}" description="{i18n>notFound.descricao}" showNavButton="true" navButtonPress="onNavBack"/>
+</mvc:View>

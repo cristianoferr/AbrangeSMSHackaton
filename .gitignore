@@ -1,0 +1,9 @@
+.destination.properties
+.classpath
+.project
+.externalToolBuilders
+node_modules/
+.bin
+.settings/
+.vscode/
+downloads/
