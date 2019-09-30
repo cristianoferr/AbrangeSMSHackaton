@@ -1,5 +1,5 @@
-# SAPUI5Empty
-Template do Projeto Hackaton
+# AbrangeSMS
+Template do Projeto do Hackaton
 
 ## CLONANDO REPOSITÓRIO
 - git clone https://github.com/cristianoferr/AbrangeSMSHackaton.git
