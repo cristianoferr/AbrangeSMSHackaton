@@ -5,12 +5,10 @@ global.projectName = process.env.npm_package_name;
 
 const express = require('express');
 var app = express();
-const request = require('request');
-const routes = require('./routes/index');
+const routes = require('./routes/routes');
 const cors = require('cors');
 const logger = require('./util/logger');
 const bodyParser = require('body-parser');
-const path = require("path");
 
 app.use(cors());
 app.use(
@@ -21,13 +19,6 @@ app.use(
     })
 );
 
-//log 
-/*app.use(function (req, res, next) {
-    var filename = path.basename(req.url);
-    console.log("The file " + filename + " was requested.");
-    next();
-});*/
-console.log (__dirname);
 
 //app.use(bodyParser.json({ limit: '2mb' }));
 app.use('/', express.static(rootPath));
