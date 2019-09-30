@@ -120,13 +120,47 @@
 					"pattern": "",
 					"name": "routeAppHome",
 					"target": "tgHome"
-				}
+                },
+                {
+                    "pattern": "estados",
+                    "name": "routeConsultaEstados",
+                    "target": [
+                        "tgHome",
+                        "tgConsultaEstados"
+                    ]
+                },
+                {
+                    "pattern": "estado/{id}",
+                    "name": "routeConsultaEstado",
+                    "parent": "routeConsultaEstados",
+                    "target": "tgConsultaEstado"
+                }
             ],
             "targets": {
                 "tgHome": {
                     "viewPath": "templateHackaton.domain.home",
                     "viewName": "home",
                     "viewLevel": 1
+                },
+                "tgConsultaEstados": {
+                    "viewPath": "templateHackaton.domain.estados.consulta",
+                    "viewName": "estados",
+                    "parent": "masterDetailSimplesSplitApp",
+                    "controlId": "masterDetailSimplesSplitAppId",
+                    "controlAggregation": "masterPages",
+                    "viewLevel": 1
+                },
+                "tgConsultaEstado": {
+                    "viewPath": "templateHackaton.domain.estados.consulta",
+                    "viewName": "estado",
+                    "parent": "masterDetailSimplesSplitApp",
+                    "controlId": "masterDetailSimplesSplitAppId",
+                    "controlAggregation": "detailPages",
+                    "viewLevel": 2
+                },
+                "masterDetailSimplesSplitApp": {
+                    "viewPath": "templateHackaton.layout",
+                    "viewName": "masterDetailSimplesSplit"
                 }
             }
         },

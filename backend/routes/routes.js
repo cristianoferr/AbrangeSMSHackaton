@@ -5,9 +5,9 @@ const jsonloader = require('./db/jsonloader');
 const sample = require('./sample/sample');
 
 router.get('/Estados', sample.getEstados);
-router.get('/Estados/:sigla', sample.getEstado);
-router.put('/Estados/:sigla', sample.updateEstado);
-router.delete('/Estados/:sigla', sample.removeEstado);
+router.get('/Estados/:id', sample.getEstado);
+router.put('/Estados/:id', sample.updateEstado);
+router.delete('/Estados/:id', sample.removeEstado);
 router.post('/Estados', sample.createEstado);
 
 //Exemplos:

@@ -17,10 +17,13 @@
 		<!--fim dos titulos rotativos -->
 
 		<!-- Cards com os principais templates -->
-		<TileContainer id="container" class= "imagemRodapeInicio">
-			<StandardTile id ="tileMasterDetail" icon= "sap-icon://hint" 
+		<TileContainer class= "imagemRodapeInicio">
+			<StandardTile icon= "sap-icon://hint" 
 			 title= "Exemplo Crud básico"
 			 press="onOpenDialog" />
+			<StandardTile icon= "sap-icon://hint" 
+			 title= "Mestre/Detalhe"
+			 press="onNavegaMestreDetalhe" />
 		</TileContainer>
 
 	</Page>

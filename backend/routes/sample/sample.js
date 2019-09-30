@@ -22,9 +22,9 @@ function getEstados(req, res, next) {
 }
 
 function getEstado(req, res, next) {
-  logger.winston.info('sample.getEstado');
-  const sigla = req.params.sigla;
-  let estado = jsonloader.getData("estados").find(x => x.sigla == sigla)
+  const id = req.params.id;
+  logger.winston.info('sample.getEstado:'+id);
+  let estado = jsonloader.getData("estados").find(x => x.id == id)
   if (estado) {
     res.status(200).json(estado);
   } else {
@@ -35,10 +35,10 @@ function getEstado(req, res, next) {
 
 function updateEstado(req, res, next) {
   logger.winston.info('sample.updateEstado');
-  const sigla = req.params.sigla;
+  const id = req.params.id;
   let nome = req.body.nome;
   let estados = jsonloader.getData("estados");
-  let estado = estados.find(x => x.sigla == sigla)
+  let estado = estados.find(x => x.id == id)
   if (estado && nome) {
     estado.nome = nome;
     jsonloader.updateData("estados", estados);
@@ -53,10 +53,10 @@ function updateEstado(req, res, next) {
 
 function removeEstado(req, res, next) {
   logger.winston.info('sample.removeEstado');
-  const sigla = req.params.sigla;
+  const id = req.params.id;
   try {
   let estados = jsonloader.getData("estados");
-  estados = estados.filter(x => x.sigla != sigla);
+  estados = estados.filter(x => x.id != id);
   jsonloader.updateData("estados", estados);
   res.status(200).json({
     status: 'success',
@@ -70,7 +70,7 @@ function removeEstado(req, res, next) {
 
 function createEstado(req, res, next) {
   logger.winston.info('sample.createEstado');
-  let sigla = req.body.sigla;
+  let sigla = req.body.id;
   let nome = req.body.nome;
   let estados = jsonloader.getData("estados");
   if (!estados.find(x => x.sigla == sigla)) {

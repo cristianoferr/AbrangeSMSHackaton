@@ -1,0 +1,31 @@
+<core:View xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+    xmlns="sap.m" controllerName="templateHackaton.domain.estados.consulta.estados" 
+    xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
+  
+<Page showHeader="true" showNavButton="true" navButtonPress="onNavBack" title="Lista de Estados" enableScrolling="true">
+		
+    
+     <List id="lista" selectionChange="onItemListaSelected" mode="SingleSelectMaster" items="{ path: '/Estados', sorter: { 
+                    path: 'sigla',
+                    descending: false,
+                    group:false }}">
+            <ObjectListItem icon="sap-icon://activity-items" title="{nome}"  app:id="{id}">
+                <firstStatus>
+                    <ObjectStatus text="{sigla}"  />
+                </firstStatus>
+            </ObjectListItem>
+        </List>
+       
+        <!-- Fim da Listagem mestre -->
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer/>
+               <!-- <Button icon="sap-icon://add" visible="{viewModel>/usuarioEhAuditor}" text="Nova Auditoria" press="onNovaAuditoria" type="Emphasized"/>-->
+            </OverflowToolbar>
+        </footer>
+</Page>
+
+</core:View>

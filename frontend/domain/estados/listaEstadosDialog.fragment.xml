@@ -31,8 +31,8 @@
                     <Input editable="false" value="{sigla}"/>
                     <Input value="{nome}"/>
                     <l:HorizontalLayout>
-                        <Button type="Emphasized" app:sigla="{sigla}" icon="sap-icon://save" text="" press=".estadoService.onSalvar"/>
-                        <Button type="Reject" app:sigla="{sigla}" icon="sap-icon://delete" text="" press=".estadoService.onExcluir"/>
+                        <Button type="Emphasized" app:id="{id}" icon="sap-icon://save" text="" press=".estadoService.onSalvar"/>
+                        <Button type="Reject" app:id="{id}" icon="sap-icon://delete" text="" press=".estadoService.onExcluir"/>
                     </l:HorizontalLayout>
                 </ColumnListItem>
             </Table> 

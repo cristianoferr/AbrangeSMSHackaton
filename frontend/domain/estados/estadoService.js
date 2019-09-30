@@ -70,7 +70,7 @@ var estadoService = (function () {
 
         let source = evt.getSource();
         let fnExclusao = function () {
-            that.getModel().remove(`/Estados/${source.data().sigla}`,
+            that.getModel().remove(`/Estados/${source.data().id}`,
                 {
                     success: function (data) {
                         dialogService.showMessageToast("Estado removido com Sucesso!");
@@ -86,7 +86,7 @@ var estadoService = (function () {
 
     function onSalvar(evt) {
         let source = evt.getSource();
-        that.getModel().update(`/Estados/${source.data().sigla}`,
+        that.getModel().update(`/Estados/${source.data().id}`,
             {
                 nome: that.getProperty(source.getBindingContext().sPath + "/nome")
             },
