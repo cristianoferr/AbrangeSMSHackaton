@@ -35,12 +35,7 @@
     "config": {
         "servePort": "8080",
         "frontendPath": "../frontend",
-        "resourcesPath": "G:/sap/resources/openui5-runtime-1.60.19/resources",
-        "resourcesPath___": "G:/sap/resources/1.60.16",
-        "coresecuritytoken": "",
-        "corejwttoken": "",
-        "nlusecuritytoken": "",
-        "cacheagents": true,
+        "resourcesPath": "../resources",
         "loglevel": "info"
     },
     "scripts": {

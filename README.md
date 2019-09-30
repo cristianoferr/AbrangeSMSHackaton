@@ -9,10 +9,12 @@ Template do Projeto Hackaton
 
 ### Instalando
 
-- Com o node instalado: npm install
+- descompactar a pasta resources do openui5 na raiz (ficando em /resources)
+- Com o node instalado: entra na pasta backend e 'npm install'
 
 ### Rodando
-- Rodar o arquivo iniciaServidor.bat na pasta raiz do projeto
+- Rodar o arquivo iniciaServidor.bat na pasta raiz do projeto (ou npm start na pasta backend)
+- 
 
 ### Estrutura de diretórios
 
