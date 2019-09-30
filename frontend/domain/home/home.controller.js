@@ -5,23 +5,18 @@ sap.ui.define(['templateHackaton/shared/baseController'],
 
 		let that;
 
-		return baseController.extend('templateHackaton.domain.callcenter.callcenter', {
+		return baseController.extend('templateHackaton.domain.home.home', {
 
 			onInit: function () {
 				that = this;
 
-				that.getRouter().getRoute('routeCallcenter').attachPatternMatched(
+				that.getRouter().getRoute('routeAppHome').attachPatternMatched(
 					onRouteOrSubRoutesMatched);
 			},
-			onCallcenter
 
 
 
 		});
-
-		function onCallcenter() {
-			window.open("tel:08002872267", "_system");
-		}
 
 
 		/** Caso a rota routeAppHome ou alguma de suas subrotas sejam utilizadas na URL, o método abaixo é disparado. Nele deve ser realizada o bind com as informações do backend.

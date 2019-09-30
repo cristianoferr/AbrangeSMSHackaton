@@ -24,6 +24,10 @@
             "mockService": {
                 "uri": "mock/mockData.json",
                 "type": "JSON"
+            },
+            "init_dominio": {
+                "uri": "model/dominio.json",
+                "type": "JSON"
             }
         }
     },
@@ -59,9 +63,6 @@
                 "sap.ui.core": {},
                 "sap.m": {},
                 "sap.ui.layout": {},
-                "sap.ushell": {},
-                "sap.collaboration": {},
-                "sap.ui.comp": {},
                 "sap.uxap": {}
             }
         },
@@ -73,20 +74,21 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "projectNameSpace.i18n.i18n"
+                    "bundleName": "templateHackaton.i18n.i18n"
                 }
             },
-            "authModel": {
-                "dataSource": "authServiceDs",
+            "dominio": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "init_dominio"
+            },
+            "":  {
+                "dataSource": "mockService",
                 "settings": {
                     "defaultBindingMode": "TwoWay",
                     "useBatch": false
                 }
             },
-            "": {
-                "dataSource": "mockService"
-            },
-            "deviceModel": {
+            "device": {
                 "type": "sap.ui.model.json.JSONModel",
                 "dataSource": "deviceDs",
                 "settings": {
@@ -114,15 +116,15 @@
             },
             "routes": [
                 {
-                    "pattern": "callcenter",
-                    "name": "routeCallcenter",
-                    "target": "tgCallcenter"
-                }
+					"pattern": "",
+					"name": "routeAppHome",
+					"target": "tgHome"
+				}
             ],
             "targets": {
-                "tgCallcenter": {
-                    "viewPath": "templateHackaton.domain.callcenter",
-                    "viewName": "callcenter",
+                "tgHome": {
+                    "viewPath": "templateHackaton.domain.home",
+                    "viewName": "home",
                     "viewLevel": 1
                 }
             }
@@ -153,6 +155,10 @@
                 {
                     "uri": "shared/constants.js",
                     "id": "constants"
+                },
+                {
+                    "uri": "shared/initializerService.js",
+                    "id": "initializerService"
                 },
                 {
                     "uri": "shared/seguranca/userService.js",

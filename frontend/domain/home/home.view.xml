@@ -1,0 +1,48 @@
+<core:View xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m" controllerName="templateHackaton.domain.home.home" 
+	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
+		<Page showHeader="false" enableScrolling="false">
+		<headerContent>
+			<Image class="imagemCabecalhoPetrobras" src="content/images/marca_petrobras.png" />
+			<Image class="logoCabecalhoPetrobras" src="content/logo_petrobras.png" />
+		</headerContent>
+		<!-- botao que abre a pagina about -->
+		<FlexBox alignItems="Start" justifyContent="End">
+			<items>
+				<Button icon= "sap-icon://action-settings" type= "Transparent" />
+			</items>
+		</FlexBox>
+		<!-- fim do botao que abre a pagina about -->
+		<!--titulos rotativos -->
+		<html:section class="rw-wrapper">
+			<html:h2 class="rw-sentence">
+				<html:span>Titulo</html:span>
+				<html:div class="rw-words rw-words-1">
+					<html:span>Detalhe 1</html:span>
+					<html:span>Detalhe 2</html:span>
+					<html:span>Detalhe 3</html:span>
+				</html:div>
+			</html:h2>
+		</html:section>
+		<!--fim dos titulos rotativos -->
+
+		<!-- Cards com os principais templates -->
+		<TileContainer id="container" class= "imagemRodapeInicio">
+			<StandardTile id ="tileMasterDetail" icon= "sap-icon://hint" type="monitor" title= "{i18n>dominio1}" press="navToSimpleMasterDetail" />
+
+			<StandardTile id ="tileGraphics" icon= "sap-icon://factory" number="1" title="{i18n>dominio2}" info="{i18n>dominio2.tileInfo}" press="navToSimpleGraphics"/>
+
+			<StandardTile id ="wizardExample" icon= "sap-icon://factory" number="1" title="{i18n>wizard}" info="{i18n>wizard.tileInfo}" press="navToWizardExample"/>
+
+			<StandardTile icon="sap-icon://workflow-tasks" title="{i18n>networkGraph.titulo}" info="{i18n>networkGraph.tileInfo}" press="navToNetworkGraph"/>
+
+			<StandardTile icon="sap-icon://workflow-tasks" title="{i18n>objectLayout.titulo}" info="{i18n>objectLayout.tileInfo}" press="navToObjectLayout"/>
+
+			<StandardTile icon="sap-icon://workflow-tasks" title="{i18n>processFlow.titulo}" press="navToProcessFlow"/>
+
+		</TileContainer>
+
+	</Page>
+</core:View>
