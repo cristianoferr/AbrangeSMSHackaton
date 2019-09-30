@@ -3,7 +3,7 @@
 	xmlns:l="sap.ui.layout"
 	xmlns="sap.m" controllerName="templateHackaton.domain.home.home" 
 	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
-		<Page  showHeader="true" enableScrolling="true" title="{i18n>appTitulo}">
+	<Page  showHeader="true" enableScrolling="true" title="{i18n>appTitulo}">
 		<headerContent>
 			<Image class="imagemCabecalhoPetrobras" src="content/images/marca_petrobras.png" />
 			<Image class="logoCabecalhoPetrobras" src="content/images/logo_petrobras.png" />

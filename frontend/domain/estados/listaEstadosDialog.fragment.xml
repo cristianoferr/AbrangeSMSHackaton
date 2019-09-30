@@ -16,9 +16,9 @@
         <Table width="100%" 
                 id="tableEstados"
                 items="{path:'/Estados', sorter: { 
-                                        path: 'sigla',
-                                        descending: false,
-                                        group:false }}"
+                    path: 'sigla',
+                    descending: false,
+                    group:false }}"
                 noDataText="Nenhum campo definido"
                 fixedLayout="false"
                 growing="false">
@@ -36,7 +36,6 @@
                     </l:HorizontalLayout>
                 </ColumnListItem>
             </Table> 
-
 
         <beginButton>
             <Button icon="sap-icon://add" type="Emphasized" text="Novo Estado" press=".estadoService.onNovoEstado"/>
