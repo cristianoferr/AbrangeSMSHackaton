@@ -8,7 +8,7 @@
         width="100%"
         class="sapUiSmallMarginTop"
         id="listaRegrasDeOuro"
-        headerText="Regras de Ouro"
+        headerText="Regras de Ouro Afetadas"
         items="{viewModel>regrasOuro}"
         mode= "MultiSelect"
         >

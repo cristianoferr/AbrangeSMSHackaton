@@ -4,7 +4,6 @@ var dadosAlertaService = (function () {
     "use strict";
     let that;
 
-    let cuidadoSeq=0;
 
     return {
         bind,
@@ -29,47 +28,51 @@ var dadosAlertaService = (function () {
 
     function onSalvarCuidado(evt) {
         let cuidados = that.getProperty("viewModel>/alerta/cuidados");
-        cuidados.forEach(x => x.empty = false);
-        cuidados.push({ passo: ++cuidadoSeq, empty: true });
-        that.setProperty("viewModel>/alerta/cuidados",cuidados);
+        let max = 1;
+        cuidados.forEach(x => {
+        x.empty = false;
+            if (x.passo > max) { max = x.passo + 1; }
+        });
+        cuidados.push({ passo: max, empty: true });
+        that.setProperty("viewModel>/alerta/cuidados", cuidados);
     }
 
     function onExcluirCuidado(evt) {
-        let path=evt.oSource.getBindingContext("viewModel").sPath;
+        let path = evt.oSource.getBindingContext("viewModel").sPath;
         let cuidados = that.getProperty("viewModel>/alerta/cuidados");
-        let cuidadoExcluido = that.getProperty("viewModel>"+path);
-        cuidados=cuidados.filter(x=>x!=cuidadoExcluido);
-        that.setProperty("viewModel>/alerta/cuidados",cuidados);
+        let cuidadoExcluido = that.getProperty("viewModel>" + path);
+        cuidados = cuidados.filter(x => x != cuidadoExcluido);
+        that.setProperty("viewModel>/alerta/cuidados", cuidados);
     }
 
     function onSalvarMotivo(evt) {
         let cuidados = that.getProperty("viewModel>/alerta/motivos");
         cuidados.forEach(x => x.empty = false);
-        cuidados.push({empty: true });
-        that.setProperty("viewModel>/alerta/motivos",cuidados);
+        cuidados.push({ empty: true });
+        that.setProperty("viewModel>/alerta/motivos", cuidados);
     }
 
     function onExcluirMotivo(evt) {
-        let path=evt.oSource.getBindingContext("viewModel").sPath;
+        let path = evt.oSource.getBindingContext("viewModel").sPath;
         let cuidados = that.getProperty("viewModel>/alerta/motivos");
-        let cuidadoExcluido = that.getProperty("viewModel>"+path);
-        cuidados=cuidados.filter(x=>x!=cuidadoExcluido);
-        that.setProperty("viewModel>/alerta/motivos",cuidados);
+        let cuidadoExcluido = that.getProperty("viewModel>" + path);
+        cuidados = cuidados.filter(x => x != cuidadoExcluido);
+        that.setProperty("viewModel>/alerta/motivos", cuidados);
     }
 
     function onSalvarComoEvitar(evt) {
         let cuidados = that.getProperty("viewModel>/alerta/comoEvitar");
         cuidados.forEach(x => x.empty = false);
         cuidados.push({ empty: true });
-        that.setProperty("viewModel>/alerta/comoEvitar",cuidados);
+        that.setProperty("viewModel>/alerta/comoEvitar", cuidados);
     }
 
     function onExcluirComoEvitar(evt) {
-        let path=evt.oSource.getBindingContext("viewModel").sPath;
+        let path = evt.oSource.getBindingContext("viewModel").sPath;
         let cuidados = that.getProperty("viewModel>/alerta/comoEvitar");
-        let cuidadoExcluido = that.getProperty("viewModel>"+path);
-        cuidados=cuidados.filter(x=>x!=cuidadoExcluido);
-        that.setProperty("viewModel>/alerta/comoEvitar",cuidados);
+        let cuidadoExcluido = that.getProperty("viewModel>" + path);
+        cuidados = cuidados.filter(x => x != cuidadoExcluido);
+        that.setProperty("viewModel>/alerta/comoEvitar", cuidados);
     }
 
 

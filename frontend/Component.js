@@ -45,9 +45,12 @@ sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/Device'],
 				that = this;
 				UIComponent.prototype.init.apply(that, arguments);
 				initializerService.bind(that);
+				backendService.bind(that);
+				locatorService.bind(that);
 				dialogService.setI18N(that.getModel('i18n'));
 
 				setTimeout(function () {
+					backendService.carregaDadosBackend();
 					that.getRouter().initialize();
 				}, 500);
 

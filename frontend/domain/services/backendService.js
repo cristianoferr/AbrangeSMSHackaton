@@ -9,11 +9,18 @@ var backendService = (function () {
 
     return {
         bind,
-        onSalvaAlerta
+        onSalvaAlerta,
+        carregaDadosBackend
     };
 
-    function onSalvaAlerta(evt){
+    function onSalvaAlerta(evt) {
         debugger;
+    }
+
+    function carregaDadosBackend() {
+        let instalacoes = that.getModel("instalacoes").getProperty("/instalacoesGeolocalizadas")
+        that.getModel("dominio").setProperty("/instalacoes", instalacoes);
+        locatorService.executaRequisicaoGeografica().then();
     }
 
     function bind(_that) {

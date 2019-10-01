@@ -58,6 +58,11 @@ sap.ui.define(["templateHackaton/shared/baseController"
 
             });
             that.getView().bindElement('viewModel>/alerta');
+
+            let dtDataOcorrencia = that.getView().byId("dtDataOcorrencia2");
+            let dtDataEmissao = that.getView().byId("dtDataEmissao2");
+            dtDataOcorrencia.setDateValue(new Date());
+            dtDataEmissao.setDateValue(new Date());
         }
 
 

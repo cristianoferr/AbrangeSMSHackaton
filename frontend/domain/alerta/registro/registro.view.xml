@@ -13,11 +13,13 @@
         
         
         <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.1_tipoAlerta.tipoAlerta" type="XML" />
+        
         <Panel visible="{= ${viewModel>/alerta/tipoAlerta}!==null}" headerText="Registro" expandable="false">
             <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.2_dadosAlerta.dadosGenericos" type="XML" />
             <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.2_dadosAlerta.dadosPRELIMINAR" type="XML" />
             <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.2_dadosAlerta.dadosSMS" type="XML" />
             <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.3_regrasOuro.regrasOuro" type="XML" />
+            <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.4_rodape.rodape" type="XML" />
         </Panel>
         <footer>
             <OverflowToolbar visible="{= ${viewModel>/alerta/tipoAlerta}!==null}">

@@ -25,6 +25,10 @@
                 "uri": "/api",
                 "type": "JSON"
             },
+            "init_instalacoes": {
+                "uri": "model/instalacoes.json",
+                "type": "JSON"
+            },
             "init_dominio": {
                 "uri": "model/dominio.json",
                 "type": "JSON"
@@ -76,6 +80,10 @@
                 "settings": {
                     "bundleName": "templateHackaton.i18n.i18n"
                 }
+            },
+            "instalacoes": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "init_instalacoes"
             },
             "dominio": {
                 "type": "sap.ui.model.json.JSONModel",
@@ -232,6 +240,10 @@
                 {
                     "uri": "shared/initializerService.js",
                     "id": "initializerService"
+                },
+                {
+                    "uri": "domain/services/locatorService.js",
+                    "id": "locatorService"
                 },
                 {
                     "uri": "shared/seguranca/userService.js",
