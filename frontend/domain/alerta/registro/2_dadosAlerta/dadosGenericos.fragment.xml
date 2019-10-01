@@ -1,0 +1,42 @@
+<core:FragmentDefinition xmlns="sap.m" 
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:cb="templateHackaton.shared.combobox"
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core">
+
+        <form:SimpleForm 
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+			    <form:content>
+
+ <!-- Dados Gerais -->
+                    <core:Title text="" />
+
+                        <Label text="Número do Alerta"  design="Bold" />
+                        <Input required="true" value="{viewModel>numero}" placeholder="Qual o número do alerta?"/>
+
+                        <Label text="Título"  design="Bold" />
+                        <Input required="true" value="{viewModel>titulo}" placeholder="Qual o título do alerta?"/>
+
+                    <core:Title text=""  />
+                        <Label text="O que aconteceu"  design="Bold" />
+                        <TextArea required="true" valueLiveUpdate="true" growing="{= ${viewModel>/tipoAlerta}===null?false:true}" width="100%"  value="{viewModel>descricao}" maxLength="500" rows="3" />
+
+                </form:content>
+        </form:SimpleForm>
+      
+</core:FragmentDefinition>

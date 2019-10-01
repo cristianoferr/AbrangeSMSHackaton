@@ -1,3 +1,30 @@
+
+/*
+tornando invisivel o título dos containers do formulário (poupando espaço de tela assim
+no sapui5 novo (1.60.18) se deixar invisivel faz com que os elementos abaixo do title fiquem cortados, por isso o 'height: 0.1rem'
+*/
+.sapUiForm .sapUiFormTitle {
+  height: 0.1rem!important;
+}
+
+.requerido:before,
+.sapMListHdr:before {
+    content: "*";
+    color: #c14646;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 0;
+    position: relative;
+    top: 0.15rem;
+}
+
+.escondePrimeiroFilho li:first-child{
+  width: 0!important;
+  padding:0;
+  border:0;
+  border-right: 1px solid #b2b2b2!important;
+}
+
 /***********************************************\
  fundo cinza utilizando nos modais e nas operações longas junto com o spinner
 \***********************************************/

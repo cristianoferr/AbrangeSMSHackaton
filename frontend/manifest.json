@@ -117,9 +117,9 @@
             },
             "routes": [
                 {
-					"pattern": "",
-					"name": "routeAppHome",
-					"target": "tgHome"
+                    "pattern": "",
+                    "name": "routeAppHome",
+                    "target": "tgHome"
                 },
                 {
                     "pattern": "novoAlerta",
@@ -182,8 +182,10 @@
                 },
                 {
                     "uri": "domain/alerta/registro/1_tipoAlerta/tipoAlerta.css"
+                },
+                {
+                    "uri": "domain/alerta/registro/3_regrasOuro/regrasOuro.css"
                 }
-
             ],
             "js": [
                 {
@@ -191,10 +193,15 @@
                     "id": "estadoService"
                 },
                 {
-                    "uri": "domain/alerta/registro_1/tipoAlerta/tipoAlertaService.js",
+                    "uri": "domain/alerta/registro/1_tipoAlerta/tipoAlertaService.js",
                     "id": "tipoAlertaService"
                 },
-                  {
+                {
+                    "uri": "domain/alerta/registro/2_dadosAlerta/dadosAlertaService.js",
+                    "id": "dadosAlertaService"
+                },
+                
+                {
                     "uri": "shared/moment.min.js",
                     "id": "momentjs"
                 },
@@ -205,6 +212,14 @@
                 {
                     "uri": "shared/formatter.js",
                     "id": "formatter"
+                },
+                {
+                    "uri": "domain/services/pendenciaService.js",
+                    "id": "pendenciaService"
+                },
+                {
+                    "uri": "domain/services/backendService.js",
+                    "id": "backendService"
                 },
                 {
                     "uri": "shared/toolsService.js",

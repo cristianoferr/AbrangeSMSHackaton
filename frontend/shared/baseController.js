@@ -21,7 +21,8 @@ sap.ui.define(
 				findById,
 				getProperty,
 				setProperty,
-				getModel
+				getModel,
+				formatter
 
 			}
 		);

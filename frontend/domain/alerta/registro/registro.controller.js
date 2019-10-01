@@ -12,7 +12,7 @@ sap.ui.define(["templateHackaton/shared/baseController"
             onInit: function () {
                 that = this;
 
-                that.getRouter().getRoute('routeRegistro').attachPatternMatched(
+                that.getRouter().getRoute('routeNovoAlerta').attachPatternMatched(
                     that.onRouteNovaSolicitacao);
 
             },
@@ -23,6 +23,9 @@ sap.ui.define(["templateHackaton/shared/baseController"
             tipoAlertaService,
             constants,
             backendService,
+            iniciaRegistro,
+            onNavBack,
+            dadosAlertaService
 
 
         });
@@ -32,11 +35,29 @@ sap.ui.define(["templateHackaton/shared/baseController"
         function onRouteNovaSolicitacao(event) {
             sap.that = that;
             tipoAlertaService.bind(that);
-            iniciaAnomalia();
+            pendenciaService.bind(that);
+            dadosAlertaService.bind(that);
+
             configuraRegrasValidacao();
 
-            that.viewModel.setProperty("/alerta", {});
+            iniciaRegistro();
 
+        }
+
+        function onNavBack() {
+            that.navigateToRoute("routeAppHome");
+        }
+
+        function iniciaRegistro(tipoAlerta = null) {
+            that.setProperty("viewModel>/alerta", {
+                tipoAlerta: tipoAlerta,
+                regrasOuro: JSON.parse(JSON.stringify(that.getProperty("dominio>/regrasDeOuro"))),
+                cuidados:[{passo:1,empty:true}],
+                motivos:[{passo:1,empty:true}],
+                comoEvitar:[{passo:1,empty:true}]
+
+            });
+            that.getView().bindElement('viewModel>/alerta');
         }
 
 

@@ -5,23 +5,22 @@
     xmlns:l="sap.ui.layout" 
     xmlns:mvc="sap.ui.core.mvc" 
     xmlns="sap.m">
-    <Page id="pageSolicitacao" class="sapUiStdPage MasterButton quebraLinha" showNavButton="false" title="Registro de Anomalia" navButtonPress="onNavBack">
+    <Page id="pageSolicitacao" class="sapUiStdPage MasterButton quebraLinha" showNavButton="false" title="Novo Alerta SMS" navButtonPress="onNavBack">
         <headerContent>
             <Image class="imagemCabecalhoPetrobras" src="{device>/rootPath}content/images/marca_petrobras.png" />
             <Image class="logoCabecalhoPetrobras" src="{device>/rootPath}content/images/logo_petrobras.png" />
         </headerContent>
         
         
-        <core:Fragment fragmentName="templateHackaton.domain.anomalia.criacao.1_tipoAlerta.tipoAlerta" type="XML" />
-<!--        <Panel visible="{= ${viewModel>/alerta/tipoAlerta}!==null}" headerText="Registro" expandable="false">
-            <core:Fragment fragmentName="templateHackaton.domain.anomalia.criacao.2_dadosAnomalia.dadosAnomalia" type="XML" />
-            <core:Fragment fragmentName="templateHackaton.domain.anomalia.criacao.3_regrasOuro.regrasOuro" type="XML" />
-            <core:Fragment fragmentName="templateHackaton.domain.anomalia.criacao.4_descricaoOcorrencia.descricaoOcorrencia" type="XML" />
-            <core:Fragment fragmentName="templateHackaton.domain.anomalia.criacao.5_anexos.anexos" type="XML" />
+        <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.1_tipoAlerta.tipoAlerta" type="XML" />
+        <Panel visible="{= ${viewModel>/alerta/tipoAlerta}!==null}" headerText="Registro" expandable="false">
+            <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.2_dadosAlerta.dadosGenericos" type="XML" />
+            <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.2_dadosAlerta.dadosPRELIMINAR" type="XML" />
+            <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.2_dadosAlerta.dadosSMS" type="XML" />
+            <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.3_regrasOuro.regrasOuro" type="XML" />
         </Panel>
-        -->
         <footer>
-            <OverflowToolbar visible="{= ${viewModel>/anomalia/tipoAnomalia}!==null}">
+            <OverflowToolbar visible="{= ${viewModel>/alerta/tipoAlerta}!==null}">
                 <Button icon="sap-icon://message-popup" visible="{= !${viewModel>/pendenciaOk}}" text="{viewModel>/pendenciaCount} {i18n>acao.pendencias} " type="{path:'viewModel>/pendenciaCount',formatter:'.formatter.getTypePendenciaCount'}" press=".pendenciaService.handlePendenciaViewPress"/>
                 <Button type="Emphasized" icon="sap-icon://accept" enabled="{viewModel>/pendenciaOk}" text="Enviar para o Gestor" press=".backendService.onSalvarAlerta"/>
                 

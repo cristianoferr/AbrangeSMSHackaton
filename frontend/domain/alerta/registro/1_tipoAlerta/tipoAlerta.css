@@ -10,7 +10,7 @@
   }
   
   .ajustaTipos li:not(:first-child){
-    width: 25% !important;
+    width: 50% !important;
   }
   
   .ajustaTipos li:first-child{

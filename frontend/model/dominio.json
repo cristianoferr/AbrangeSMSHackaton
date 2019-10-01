@@ -1,7 +1,21 @@
 {
-    "tipoAnomalia":[
+    "tipoAlertas":[
         {"nome":"","icone":"","id":null,"info":"","visible":true,"width":"0px"},
         {"nome":"Alerta Preliminar","icone":"anomalias/desvio.png","id":"PRELIMINAR","info":"","visible":true},
         {"nome":"Alerta SMS","icone":"anomalias/incidente.png","id":"SMS","visible":true}
-    ]   
+    ]   ,
+    "regrasDeOuro":[
+        {"nome":"Atenção às Mudanças","icone":"AtencaoMudancas.png"},
+        {"nome":"Atmosferas Explosivas","icone":"AtmosferaExplosiva.png"},
+        {"nome":"Álcool e outras drogas","icone":"AlcoolDrogras.png"},
+        {"nome":"Equipamentos de Proteção Individual","icone":"EPI.png"},
+        {"nome":"Espaço Confinado","icone":"EspacoConfinado.png"},
+        {"nome":"Isolamento de Energias","icone":"IsolamentoEnergias.png"},
+        {"nome":"Permissão para Trabalho","icone":"PermissaoTrabalho.png"},
+        {"nome":"Posicionamento Seguro","icone":"PosicionamentoSeguro.png"},
+        {"nome":"Segurança no Trânsito","icone":"SegurancaTransito.png"},
+        {"nome":"Trabalho em Altura","icone":"TrabalhoAltura.png"},
+        {"nome":"Não se Aplica","icone":"NA.png"}
+   ]
+
 }

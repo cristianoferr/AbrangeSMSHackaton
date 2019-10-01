@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns="sap.m" 
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core">
+
+    <List selectionChange=".regrasOuroService.onSelectRegra"
+        width="100%"
+        class="sapUiSmallMarginTop"
+        id="listaRegrasDeOuro"
+        headerText="Regras de Ouro"
+        items="{viewModel>regrasOuro}"
+        mode= "MultiSelect"
+        >
+        <StandardListItem class="itemRegraOuro quebraLinha" icon="{device>/rootPath}content/images/regras/{viewModel>icone}"
+            title= "{viewModel>nome}"  app:nome="{viewModel>nome}">
+        </StandardListItem>
+    </List>
+</core:FragmentDefinition>

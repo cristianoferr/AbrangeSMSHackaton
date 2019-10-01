@@ -41,7 +41,7 @@ var tipoAlertaService = (function () {
     }
 
     function onPressAlerta(evt) {
-        that.iniciaRegistro(evt.getSource().data().idAnomalia);
+        that.iniciaRegistro(evt.getSource().data().idAlerta);
         pendenciaService.validaPendencias();
     }
 

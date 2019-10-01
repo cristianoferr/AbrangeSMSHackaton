@@ -9,8 +9,12 @@ var backendService = (function () {
 
     return {
         bind,
-        onSalvarRegistro
+        onSalvaAlerta
     };
+
+    function onSalvaAlerta(evt){
+        debugger;
+    }
 
     function bind(_that) {
         that = _that;
