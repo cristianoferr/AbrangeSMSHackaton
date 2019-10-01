@@ -15,7 +15,8 @@ sap.ui.define(['templateHackaton/shared/baseController'],
 			},
 			onOpenDialog,
 			estadoService,
-			onNavegaMestreDetalhe
+			onNavegaMestreDetalhe,
+			onNovoAlerta
 
 
 		});
@@ -27,6 +28,10 @@ sap.ui.define(['templateHackaton/shared/baseController'],
 		 */
 		function onRouteOrSubRoutesMatched() {
 
+		}
+
+		function onNovoAlerta(){
+			that.navigateToRoute("routeNovoAlerta");
 		}
 
 		function onNavegaMestreDetalhe(){

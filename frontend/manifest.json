@@ -122,6 +122,12 @@
 					"target": "tgHome"
                 },
                 {
+                    "pattern": "novoAlerta",
+                    "name": "routeNovoAlerta",
+                    "parent": "routeAppHome",
+                    "target": "tgNovoAlerta"
+                },
+                {
                     "pattern": "estados",
                     "name": "routeConsultaEstados",
                     "target": [
@@ -141,6 +147,11 @@
                     "viewPath": "templateHackaton.domain.home",
                     "viewName": "home",
                     "viewLevel": 1
+                },
+                "tgNovoAlerta": {
+                    "viewPath": "templateHackaton.domain.alerta.registro",
+                    "viewName": "registro",
+                    "viewLevel": 2
                 },
                 "tgConsultaEstados": {
                     "viewPath": "templateHackaton.domain.estados.consulta",
@@ -168,12 +179,20 @@
             "css": [
                 {
                     "uri": "content/css/style.css"
+                },
+                {
+                    "uri": "domain/alerta/registro/1_tipoAlerta/tipoAlerta.css"
                 }
+
             ],
             "js": [
                 {
                     "uri": "domain/estados/estadoService.js",
                     "id": "estadoService"
+                },
+                {
+                    "uri": "domain/alerta/registro_1/tipoAlerta/tipoAlertaService.js",
+                    "id": "tipoAlertaService"
                 },
                   {
                     "uri": "shared/moment.min.js",

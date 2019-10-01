@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" 
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core">
+
+    <!-- inicio da seção dos cards-->
+    <SegmentedButton items="{dominio>/tipoAlertas}" selectedKey="{viewModel>tipoAlerta}" class="sapUiSmallMarginBottom ajustaTipos">
+        <items>
+            <SegmentedButtonItem app:idAlerta="{dominio>id}" press=".tipoAnomaliaService.onPressAlerta" class="sapUiLargeMargin" visible="{dominio>visible}" width="{dominio>width}" icon="{device>/rootPath}content/images/{dominio>icone}" key="{dominio>id}" text="{dominio>nome}" />
+        </items>
+    </SegmentedButton>
+    <!-- fim da seção dos cards-->
+
+</core:FragmentDefinition>

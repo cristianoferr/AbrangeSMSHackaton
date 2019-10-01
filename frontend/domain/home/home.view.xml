@@ -18,9 +18,10 @@
 
 		<!-- Cards com os principais templates -->
 		<TileContainer class= "imagemRodapeInicio">
-			<StandardTile icon= "sap-icon://hint" 
-			 title= "Exemplo Crud básico"
-			 press="onOpenDialog" />
+			<StandardTile icon= "sap-icon://add" 
+			 title= "Novo Alerta"
+			 press="onNovoAlerta" />
+			 
 			<StandardTile icon= "sap-icon://hint" 
 			 title= "Mestre/Detalhe"
 			 press="onNavegaMestreDetalhe" />

@@ -1,3 +1,7 @@
 {
-    
+    "tipoAnomalia":[
+        {"nome":"","icone":"","id":null,"info":"","visible":true,"width":"0px"},
+        {"nome":"Alerta Preliminar","icone":"anomalias/desvio.png","id":"PRELIMINAR","info":"","visible":true},
+        {"nome":"Alerta SMS","icone":"anomalias/incidente.png","id":"SMS","visible":true}
+    ]   
 }
