@@ -8,23 +8,25 @@
 			<Image class="imagemCabecalhoPetrobras" src="content/images/marca_petrobras.png" />
 			<Image class="logoCabecalhoPetrobras" src="content/images/logo_petrobras.png" />
 		</headerContent>
-		<!--titulos rotativos -->
-		<html:section class="rw-wrapper">
-			<html:h2 class="rw-sentence">
-				<html:span>AbrangeSMS</html:span>
-			</html:h2>
-		</html:section>
-		<!--fim dos titulos rotativos -->
-
+		<subHeader>
+			<Bar id="searchBar">
+				<contentMiddle>
+					<SearchField id="searchField" placeholder="{i18n>searchPlaceholder}"  search="onSearch" value="{localModel>/searchAlertas}" showRefreshButton="false" width="80%" />
+				</contentMiddle>
+			</Bar>
+		</subHeader>
+	
 		<!-- Cards com os principais templates -->
 		<TileContainer class= "imagemRodapeInicio">
-			<StandardTile icon= "sap-icon://add" 
-			 title= "Novo Alerta"
+			<StandardTile icon= "sap-icon://alert" 
+			 title= "Incluir Alerta SMS"
+			 info="Visão Cadastrador"
 			 press="onNovoAlerta" />
 			 
-			<StandardTile icon= "sap-icon://hint" 
-			 title= "Mestre/Detalhe"
-			 press="onNavegaMestreDetalhe" />
+			<StandardTile icon="sap-icon://activity-items" 
+			 title= "Consulta Alertas"
+			 info="Visão Usuário"
+			 press="onNavegaAlertas" />
 		</TileContainer>
 
 	</Page>

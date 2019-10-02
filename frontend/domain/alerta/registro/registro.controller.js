@@ -55,6 +55,7 @@ sap.ui.define(["templateHackaton/shared/baseController"
                 cuidados: [{ passo: 1, empty: true }],
                 motivos: [{ passo: 1, empty: true }],
                 comoEvitar: [{ passo: 1, empty: true }],
+                acoesEmAndamento: [{ passo: 1, empty: true }],
                 publicoAlvo: []
 
             });

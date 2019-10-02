@@ -15,8 +15,9 @@ sap.ui.define(['templateHackaton/shared/baseController'],
 			},
 			onOpenDialog,
 			estadoService,
-			onNavegaMestreDetalhe,
-			onNovoAlerta
+			onNavegaAlertas,
+			onNovoAlerta,
+			onSearch
 
 
 		});
@@ -30,15 +31,19 @@ sap.ui.define(['templateHackaton/shared/baseController'],
 
 		}
 
-		function onNovoAlerta(){
+		function onNovoAlerta() {
 			that.navigateToRoute("routeNovoAlerta");
 		}
 
-		function onNavegaMestreDetalhe(){
-			that.navigateToRoute("routeConsultaEstados");
+		function onNavegaAlertas() {
+			that.navigateToRoute("routeConsultaAlertas");
 		}
 
-		function onOpenDialog(evt){
+		function onSearch(evt) {
+			that.navigateToRoute("routeBuscaAlertas", { search: evt.mParameters.query });
+		}
+
+		function onOpenDialog(evt) {
 			estadoService.bind(that);
 			estadoService.onAbreDialog(evt.getSource());
 		}

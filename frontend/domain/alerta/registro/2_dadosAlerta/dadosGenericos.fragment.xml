@@ -52,6 +52,9 @@
                             <core:ListItem key="{dominio>nome}" app:gestor_menor="{dominio>gestor_menor}" text="{dominio>nome}"  additionalText="{dominio>distanciaDesc}"/>
                         </cb:SearchComboBox> 
 
+                        <Label text="Número do RTA" design="Bold" visible="{= ${viewModel>tipoAlerta}==='SMS'}"/>
+                        <Input visible="{= ${viewModel>tipoAlerta}==='SMS'}" required="true" value="{viewModel>titulo}" placeholder="Qual o número do RTA?"/>
+
                 </form:content>
         </form:SimpleForm>
       

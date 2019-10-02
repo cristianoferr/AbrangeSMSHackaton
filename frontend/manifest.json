@@ -29,8 +29,15 @@
                 "uri": "model/instalacoes.json",
                 "type": "JSON"
             },
+            "init_mock": {
+                "uri": "model/mock.json",
+                "type": "JSON"
+            },
             "init_dominio": {
                 "uri": "model/dominio.json",
+                "type": "JSON"
+            },
+            "localModelDS": {
                 "type": "JSON"
             }
         }
@@ -90,6 +97,10 @@
                 "dataSource": "init_dominio"
             },
             "": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "init_mock"
+            },
+            "_rest_": {
                 "type": "templateHackaton.shared.model.RESTModel",
                 "dataSource": "mainService",
                 "settings": {
@@ -110,6 +121,10 @@
                 "settings": {
                     "defaultBindingMode": "TwoWay"
                 }
+            },
+            "localModel": {
+                "type": "templateHackaton.shared.model.LocalStorageModel",
+                "dataSource": "localModelDS"
             }
         },
         "routing": {
@@ -136,11 +151,19 @@
                     "target": "tgNovoAlerta"
                 },
                 {
-                    "pattern": "estados",
-                    "name": "routeConsultaEstados",
+                    "pattern": "alertas",
+                    "name": "routeConsultaAlertas",
                     "target": [
                         "tgHome",
-                        "tgConsultaEstados"
+                        "tgConsultaAlertas"
+                    ]
+                },
+                {
+                    "pattern": "busca/{search}",
+                    "name": "routeBuscaAlertas",
+                    "target": [
+                        "tgHome",
+                        "tgConsultaAlertas"
                     ]
                 },
                 {
@@ -161,9 +184,9 @@
                     "viewName": "registro",
                     "viewLevel": 2
                 },
-                "tgConsultaEstados": {
-                    "viewPath": "templateHackaton.domain.estados.consulta",
-                    "viewName": "estados",
+                "tgConsultaAlertas": {
+                    "viewPath": "templateHackaton.domain.alerta.consulta",
+                    "viewName": "alertas",
                     "parent": "masterDetailSimplesSplitApp",
                     "controlId": "masterDetailSimplesSplitAppId",
                     "controlAggregation": "masterPages",
@@ -189,6 +212,9 @@
                     "uri": "content/css/style.css"
                 },
                 {
+                    "uri": "domain/home/home.css"
+                },
+                {
                     "uri": "domain/alerta/registro/1_tipoAlerta/tipoAlerta.css"
                 },
                 {
@@ -201,6 +227,10 @@
                     "id": "estadoService"
                 },
                 {
+                    "uri": "domain/alerta/consulta/filtro/filtroAlertaService.js",
+                    "id": "filtroAlertaService"
+                },
+                {
                     "uri": "domain/alerta/registro/1_tipoAlerta/tipoAlertaService.js",
                     "id": "tipoAlertaService"
                 },
@@ -208,7 +238,6 @@
                     "uri": "domain/alerta/registro/2_dadosAlerta/dadosAlertaService.js",
                     "id": "dadosAlertaService"
                 },
-                
                 {
                     "uri": "shared/moment.min.js",
                     "id": "momentjs"

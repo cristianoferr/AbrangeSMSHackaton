@@ -13,7 +13,9 @@ var dadosAlertaService = (function () {
         onSalvarMotivo,
         onExcluirMotivo,
         onSalvarComoEvitar,
-        onExcluirComoEvitar
+        onExcluirComoEvitar,
+        onSalvarAcaoAndamento,
+        onExcluirAcaoAndamento
 
     };
     function adicionaRegrasPendencias() {
@@ -75,6 +77,19 @@ var dadosAlertaService = (function () {
         that.setProperty("viewModel>/alerta/comoEvitar", cuidados);
     }
 
+    function onSalvarAcaoAndamento(evt) {
+        let cuidados = that.getProperty("viewModel>/alerta/acoesEmAndamento");
+        cuidados.forEach(x => x.empty = false);
+        cuidados.push({ empty: true });
+        that.setProperty("viewModel>/alerta/acoesEmAndamento", cuidados);
+    }
 
+    function onExcluirAcaoAndamento(evt) {
+        let path = evt.oSource.getBindingContext("viewModel").sPath;
+        let cuidados = that.getProperty("viewModel>/alerta/acoesEmAndamento");
+        let cuidadoExcluido = that.getProperty("viewModel>" + path);
+        cuidados = cuidados.filter(x => x != cuidadoExcluido);
+        that.setProperty("viewModel>/alerta/acoesEmAndamento", cuidados);
+    }
 })();
 
