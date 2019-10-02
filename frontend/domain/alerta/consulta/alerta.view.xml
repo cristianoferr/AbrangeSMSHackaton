@@ -7,7 +7,7 @@
     xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
   
 <Page  showHeader="false" enableScrolling="true" title="{titulo}">
-	  <ObjectHeader id="oh1"
+    <ObjectHeader id="oh1"
       title="{titulo}"
         backgroundDesign="Translucent">
         <statuses>
@@ -16,45 +16,23 @@
         </statuses>
     </ObjectHeader>
 
-    <form:SimpleForm 
-			editable="false"
-			layout="ResponsiveGridLayout"
-			labelSpanXL="4"
-			labelSpanL="3"
-			labelSpanM="2"
-			labelSpanS="12"
-			adjustLabelSpan="false"
-			emptySpanXL="0"
-			emptySpanL="0"
-			emptySpanM="0"
-			emptySpanS="0"
-			columnsXL="2"
-			columnsL="2"
-            breakpointM="900"
-			columnsM="1"
-			singleContainerFullSize="true" >
-			    <form:content>
-                    <core:Title text="" />
+    <l:VerticalLayout>
+        <Label class="titulo" text="O QUE ACONTECEU:" design="Normal" />
+        <Text text="{descricao}"/>
+    </l:VerticalLayout>
 
-                        <Label class="titulo" text="O QUE ACONTECEU" design="Normal" />
-                        <Text text="{descricao}"/>
-                        
+    <l:Grid id="gridPreliminar" defaultSpan="XL6 L6 M6 S12" hSpacing="0" class="sapUiSmallMarginTop" visible="{= ${tipoAlerta}==='PRELIMINAR'}"
+        containerQuery="true">
+        <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.cuidadosSugeridos" type="XML" />
+        <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.fotos" type="XML" />
 
-                </form:content>
-        </form:SimpleForm>
+    </l:Grid>
 
-            <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.cuidadosSugeridos" type="XML" />
-        	<l:Grid id="gridPreliminar" visible="{= ${tipoAlerta}==='PRELIMINAR'}"
-                containerQuery="true">
-                <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.fotos" type="XML" />
+    <l:Grid id="gridSMS" visible="{= ${tipoAlerta}==='SMS'}"
+        containerQuery="true">
+        <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.fotos" type="XML" />
 
-			</l:Grid>
-
-            <l:Grid id="gridSMS" visible="{= ${tipoAlerta}==='SMS'}"
-                containerQuery="true">
-                <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.fotos" type="XML" />
-
-			</l:Grid>
+    </l:Grid>
 
 </Page>
 

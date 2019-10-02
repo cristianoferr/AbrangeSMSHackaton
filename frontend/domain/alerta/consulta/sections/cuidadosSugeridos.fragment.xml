@@ -5,53 +5,9 @@
 	xmlns:form="sap.ui.layout.form"
 	xmlns:core="sap.ui.core">
 
-<l:VerticalLayout>
-
-<form:SimpleForm 
-			editable="false"
-			layout="ResponsiveGridLayout"
-			labelSpanXL="4"
-			labelSpanL="3"
-			labelSpanM="2"
-			labelSpanS="12"
-			adjustLabelSpan="false"
-			emptySpanXL="0"
-			emptySpanL="0"
-			emptySpanM="0"
-			emptySpanS="0"
-			columnsXL="2"
-			columnsL="2"
-            breakpointM="900"
-			columnsM="1"
-			singleContainerFullSize="true" >
-			    <form:content>
-                    <core:Title text="" />
-
-                        <Label class="titulo" text="CUIDADOS SUGERIDOS" design="Normal" />
-                        <Text text="{path:'cuidados',formatter:'.juntaTexto'}"/>
-                        
-
-                </form:content>
-        </form:SimpleForm>
-
-    <Table width="100%" 
-        headerText="CUIDADOS SUGERIDOS:"
-            class="textoNormal"
-            id="tableCuidados"
-            items="{path:'cuidados', sorter: { 
-            path: 'passo',
-            descending: false,
-            group:false }}"
-        noDataText="Nenhum cuidado definido"
-        fixedLayout="true"
-        growing="false">
-        <columns>
-            <Column width="100%" hAlign="Left"></Column>
-        </columns>
-        <ColumnListItem >
-            <Label class="quebraLinha" text="{passo}. {descricao}"/>
-        </ColumnListItem>
-    </Table>
+    <l:VerticalLayout width="100%">
+        <Label class="titulo" text="CUIDADOS SUGERIDOS" design="Normal" />
+        <Text text="{path:'cuidados',formatter:'.juntaTexto'}"/>
     </l:VerticalLayout>
 
 </core:FragmentDefinition>
