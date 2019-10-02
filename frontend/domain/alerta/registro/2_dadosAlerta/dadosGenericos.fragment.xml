@@ -23,30 +23,27 @@
 			singleContainerFullSize="false" >
 			    <form:content>
 
- <!-- Dados Gerais -->
                     <core:Title text="" />
-
-                        <Label text="Número do Alerta"  design="Bold" />
-                        <Input required="true" value="{viewModel>numero}" placeholder="Qual o número do alerta?"/>
 
                         <Label text="Título" design="Bold" />
                         <Input required="true" value="{viewModel>titulo}" placeholder="Qual o título do alerta?"/>
+						
                         <Label text="O que aconteceu"  design="Bold" />
                         <TextArea required="true" valueLiveUpdate="true" growing="{= ${viewModel>/tipoAlerta}===null?false:true}" width="100%"  value="{viewModel>descricao}" maxLength="500" rows="3" />
 
                     <core:Title text=""  />
                         <Label text="Data Ocorrência" design="Bold" />
-                        <DatePicker required="true" id="dtDataOcorrencia2"
+                        <DatePicker required="true" id="dtDataOcorrencia"
                             value="{viewModel>dataOcorrencia}" valueFormat="dd-MM-yyyy" displayFormat="short" change="handleChange"
                             class=""/>
 
                         <Label text="Data Emissão" design="Bold" />
-                        <DatePicker required="true" id="dtDataEmissao2"
+                        <DatePicker required="true" id="dtDataEmissao"
                             value="{viewModel>dataEmissao}" valueFormat="dd-MM-yyyy" displayFormat="short" change="handleChange"
                             class=""/>
 
-						<Label text="Onde ocorreu esse alerta" design="Bold" />
-                        <cb:SearchComboBox showSecondaryValues="true" width="100%"
+						<Label text="Onde ocorreu a anomalia" design="Bold" />
+                        <cb:SearchComboBox required="true" showSecondaryValues="true" width="100%"
                             items="{path: 'dominio>/instalacoes', sorter: { 
                                         path: 'orderBy',
                                         descending: false,

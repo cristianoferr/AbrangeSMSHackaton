@@ -31,7 +31,7 @@ var dadosAlertaService = (function () {
         let max = 1;
         cuidados.forEach(x => {
         x.empty = false;
-            if (x.passo > max) { max = x.passo + 1; }
+            if (x.passo >= max) { max = x.passo + 1; }
         });
         cuidados.push({ passo: max, empty: true });
         that.setProperty("viewModel>/alerta/cuidados", cuidados);

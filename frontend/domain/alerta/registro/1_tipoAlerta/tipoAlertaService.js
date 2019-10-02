@@ -13,7 +13,7 @@ var tipoAlertaService = (function () {
 
     };
     function adicionaRegrasPendencias(){
-        pendenciaService.addRegra(0, "viewModel>/anomalia/tipoAlerta", that.getI18NTranslation("pendencia.tipoAlerta"));
+        pendenciaService.addRegra(0, "viewModel>/alerta/tipoAlerta", that.getI18NTranslation("pendencia.tipoAlerta"));
     }
 
     function bind(_that) {

@@ -1,3 +1,15 @@
+.tokenMultiLinha {
+  height:auto;
+  min-height: 2.5rem;
+}
+.tokenMultiLinha .sapMTokenizer{
+width:-webkit-fill-available;
+}
+.tokenMultiLinha .sapMTokenizer .sapMToken{
+  display: list-item;
+  height: auto;
+  margin-left: 0.375rem;
+}
 
 /*
 tornando invisivel o título dos containers do formulário (poupando espaço de tela assim

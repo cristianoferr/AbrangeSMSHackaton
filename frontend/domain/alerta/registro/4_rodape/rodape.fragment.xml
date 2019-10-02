@@ -22,7 +22,27 @@
 			columnsM="2"
 			singleContainerFullSize="false" >
 			    <form:content>
+                    <core:Title text=""  />
+                        <Label text="Palavras-Chave" />
+                        <MultiInput required="true" liveChange="initValidator" tokenUpdate__="sincronizaTokens"
+                            tokens="{
+                                path: 'viewModel>palavrasChave'
+                            }"  enableMultiLineMode="true" width="100%" showValueHelp="false">
+                            <tokens>
+                                <Token key="{viewModel>palavraChave}" text="{viewModel>palavra}" />
+                            </tokens> 
+                        </MultiInput>
 
+                    <core:Title text=""  />
+                        <Label text="Público Alvo desse Alerta" design="Bold" />
+                        <MultiComboBox 
+                            required="true"
+                            class="tokenMultiLinha"
+                            selectedKeys="{viewModel>publicoAlvo}"
+                            width="100%"
+                            items="{dominio>/Orgaos}">
+                            <core:Item key="{dominio>OrgaoPetrobras}" text="{dominio>OrgaoPetrobras}"/>
+                        </MultiComboBox>
                 </form:content>
         </form:SimpleForm>
       

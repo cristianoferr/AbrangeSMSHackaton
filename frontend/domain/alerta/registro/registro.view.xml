@@ -5,7 +5,7 @@
     xmlns:l="sap.ui.layout" 
     xmlns:mvc="sap.ui.core.mvc" 
     xmlns="sap.m">
-    <Page id="pageSolicitacao" class="sapUiStdPage MasterButton quebraLinha" showNavButton="false" title="Novo Alerta SMS" navButtonPress="onNavBack">
+    <Page id="pageSolicitacao" class="sapUiStdPage MasterButton quebraLinha" showNavButton="true" title="Novo Alerta SMS" navButtonPress="onNavBack">
         <headerContent>
             <Image class="imagemCabecalhoPetrobras" src="{device>/rootPath}content/images/marca_petrobras.png" />
             <Image class="logoCabecalhoPetrobras" src="{device>/rootPath}content/images/logo_petrobras.png" />
@@ -24,7 +24,7 @@
         <footer>
             <OverflowToolbar visible="{= ${viewModel>/alerta/tipoAlerta}!==null}">
                 <Button icon="sap-icon://message-popup" visible="{= !${viewModel>/pendenciaOk}}" text="{viewModel>/pendenciaCount} {i18n>acao.pendencias} " type="{path:'viewModel>/pendenciaCount',formatter:'.formatter.getTypePendenciaCount'}" press=".pendenciaService.handlePendenciaViewPress"/>
-                <Button type="Emphasized" icon="sap-icon://accept" enabled="{viewModel>/pendenciaOk}" text="Enviar para o Gestor" press=".backendService.onSalvarAlerta"/>
+                <Button type="Emphasized" icon="sap-icon://accept" enabled="{viewModel>/pendenciaOk}" text="Enviar para Aprovação" press=".backendService.onSalvarAlerta"/>
                 
                 <ToolbarSpacer/>
             </OverflowToolbar>

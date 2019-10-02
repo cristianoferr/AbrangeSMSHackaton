@@ -52,15 +52,16 @@ sap.ui.define(["templateHackaton/shared/baseController"
             that.setProperty("viewModel>/alerta", {
                 tipoAlerta: tipoAlerta,
                 regrasOuro: JSON.parse(JSON.stringify(that.getProperty("dominio>/regrasDeOuro"))),
-                cuidados:[{passo:1,empty:true}],
-                motivos:[{passo:1,empty:true}],
-                comoEvitar:[{passo:1,empty:true}]
+                cuidados: [{ passo: 1, empty: true }],
+                motivos: [{ passo: 1, empty: true }],
+                comoEvitar: [{ passo: 1, empty: true }],
+                publicoAlvo: []
 
             });
             that.getView().bindElement('viewModel>/alerta');
 
-            let dtDataOcorrencia = that.getView().byId("dtDataOcorrencia2");
-            let dtDataEmissao = that.getView().byId("dtDataEmissao2");
+            let dtDataOcorrencia = that.getView().byId("dtDataOcorrencia");
+            let dtDataEmissao = that.getView().byId("dtDataEmissao");
             dtDataOcorrencia.setDateValue(new Date());
             dtDataEmissao.setDateValue(new Date());
         }
