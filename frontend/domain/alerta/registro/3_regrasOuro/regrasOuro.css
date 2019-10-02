@@ -1,14 +1,14 @@
 /**
 Ajustes nos títulos 'Subclassificação' e 'Regras de Ouro' para deixar com mesma fonte que os títulos dos campos
 */
-.sapMListHdr{
+.listaRegraOuro .sapMListHdr{
     font-size: 0.875rem;
     font-family: "72-Web",Arial,Helvetica,sans-serif;
     font-weight: bold;
 }
 
 .requerido:before,
-.sapMListHdr:before {
+.listaRegraOuro .sapMListHdr:before {
     content: "*";
     color: #c14646;
     font-size: 1.25rem;

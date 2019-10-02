@@ -1,4 +1,19 @@
 {
+    "camposOrdenaveis":[
+        {"id":"id","nome":"Data Ocorrência"},
+        {"id":"distancia","nome":"Distância"}
+    ],
+
+    "tiposOrdenacao":[
+        {"id":"crescente","nome":"Crescente"},
+        {"id":"decrescente","nome":"Decrescente"}
+    ],
+
+    "tiposAlertasFiltro":[
+        {"id":null,"nome":"Ambos"},
+        {"id":"PRELIMINAR","nome":"Preliminar"},
+        {"id":"SMS","nome":"Alerta SMS"}
+    ],
     "tipoAlertas":[
         {"nome":"","icone":"","id":null,"info":"","visible":true,"width":"0px"},
         {"nome":"Alerta Preliminar","icone":"anomalias/desvio.png","id":"PRELIMINAR","info":"","visible":true},

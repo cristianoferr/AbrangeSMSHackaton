@@ -1,0 +1,9 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+    xmlns:l="sap.ui.layout" 
+    xmlns:tnt="sap.tnt"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+
+
+</core:FragmentDefinition>

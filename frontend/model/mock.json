@@ -8,12 +8,13 @@
             "numero":"0011/2017",
             "descricao":"Durante  uma  operação  de  preparação  para  descarregar dois  tubos  de  produção  do caminhão munck para o solo, um dos trabalhadores (operador de munck) foi atingido por um tubo de 3” (12 metros de comprimento e aproximadamente 135 kg) que se deslocou. O  trabalhador  foi  atingido  na  cabeça  e  veio  a  óbito  no  local.  As  causas  estão  em investigação. ",
             "titulo":"ACIDENTE FATAL – IMPACTO SOFRIDO POR TUBO",
-            "instalacao":"",
+            "instalacao":"EDICIN",
+            
             "cuidados":
                 [
-                    {"descricao":"Posicionar-se  em  local  seguro  durante movimentação de carga"},
-                    {"descricao":" Planejar   a   movimentação   de   carga alocando os equipamentos e metodologia adequados para as operações"},
-                    {"descricao":"Seguir  rigorosamente  os  procedimentos de  movimentação  e  desfile  de  tubos  de produção. "}
+                    {"passo":1, "descricao":"Posicionar-se  em  local  seguro  durante movimentação de carga"},
+                    {"passo":2,"descricao":" Planejar   a   movimentação   de   carga alocando os equipamentos e metodologia adequados para as operações"},
+                    {"passo":3,"descricao":"Seguir  rigorosamente  os  procedimentos de  movimentação  e  desfile  de  tubos  de produção. "}
                 ],
             "acoesEmAndamento":[
                 {"descricao":"ação1"}
@@ -22,7 +23,10 @@
             "regraDeOuro":[{"nomeRegraDeOuro":"Posicionamento Seguro"}],
             "dataOcorrencia":"23/05/2017",
             "dataEmissao":"24/05/2017",
-            "fotos":[],
+            "fotos":[
+                {"nome":"foto1.png","legenda":"Caminhão munck com tubo semelhante ao que causou o acidente"},
+                {"nome":"foto2.png","legenda":"Posição em que ficou o tubo e o acidentado após ser atingido"}
+            ],
             "palavrasChave":[{"palavraChave":"impacto"},{"palavraChave":"posicionamento inseguro"},{"palavraChave":"movimentação de carga"}]
         },
 
@@ -33,7 +37,7 @@
             "numero":"SMS/PN-E&P/AC 001/2019",
             "descricao":"Durante  uma  operação  de  preparação  para  descarregar dois  tubos  de  produção  do caminhão munck para o solo, um dos trabalhadores (operador de munck) foi atingido por um tubo de 3” (12 metros de comprimento e aproximadamente 135 kg) que se deslocou. O  trabalhador  foi  atingido  na  cabeça  e  veio  a  óbito  no  local.  As  causas  estão  em investigação. ",
             "titulo":"FALHA NA CLASSIFICAÇÃO DE NÃO CONFORMIDADE DO PAG-SMS",
-            "instalacao":"",
+            "instalacao":"EDIBRA",
             "motivos":
                 [
                     {"descricao":"A redação..."},

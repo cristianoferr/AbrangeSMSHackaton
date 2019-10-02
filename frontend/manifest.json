@@ -167,10 +167,10 @@
                     ]
                 },
                 {
-                    "pattern": "estado/{id}",
-                    "name": "routeConsultaEstado",
-                    "parent": "routeConsultaEstados",
-                    "target": "tgConsultaEstado"
+                    "pattern": "alerta/{id}",
+                    "name": "routeConsultaAlerta",
+                    "parent": "routeConsultaAlertas",
+                    "target": "tgConsultaAlerta"
                 }
             ],
             "targets": {
@@ -192,9 +192,9 @@
                     "controlAggregation": "masterPages",
                     "viewLevel": 1
                 },
-                "tgConsultaEstado": {
-                    "viewPath": "templateHackaton.domain.estados.consulta",
-                    "viewName": "estado",
+                "tgConsultaAlerta": {
+                    "viewPath": "templateHackaton.domain.alerta.consulta",
+                    "viewName": "alerta",
                     "parent": "masterDetailSimplesSplitApp",
                     "controlId": "masterDetailSimplesSplitAppId",
                     "controlAggregation": "detailPages",
@@ -213,6 +213,9 @@
                 },
                 {
                     "uri": "domain/home/home.css"
+                },
+                {
+                    "uri": "domain/alerta/consulta/alerta.css"
                 },
                 {
                     "uri": "domain/alerta/registro/1_tipoAlerta/tipoAlerta.css"
@@ -269,6 +272,10 @@
                 {
                     "uri": "shared/initializerService.js",
                     "id": "initializerService"
+                },
+                {
+                    "uri": "domain/alerta/consulta/barraSuperiorService.js",
+                    "id": "barraSuperiorService"
                 },
                 {
                     "uri": "domain/services/locatorService.js",

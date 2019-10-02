@@ -1,0 +1,61 @@
+<core:View xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:form="sap.ui.layout.form"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+    xmlns="sap.m" controllerName="templateHackaton.domain.alerta.consulta.alerta" 
+    xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
+  
+<Page  showHeader="false" enableScrolling="true" title="{titulo}">
+	  <ObjectHeader id="oh1"
+      title="{titulo}"
+        backgroundDesign="Translucent">
+        <statuses>
+      	    <ObjectStatus
+                text="{path:'status',formatter:'.traduzStatus'}"  state="{path:'status', formatter:'.getStateStatus'}" />
+        </statuses>
+    </ObjectHeader>
+
+    <form:SimpleForm 
+			editable="false"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="2"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+            breakpointM="900"
+			columnsM="1"
+			singleContainerFullSize="true" >
+			    <form:content>
+                    <core:Title text="" />
+
+                        <Label class="titulo" text="O QUE ACONTECEU" design="Normal" />
+                        <Text text="{descricao}"/>
+                        
+
+                </form:content>
+        </form:SimpleForm>
+
+            <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.cuidadosSugeridos" type="XML" />
+        	<l:Grid id="gridPreliminar" visible="{= ${tipoAlerta}==='PRELIMINAR'}"
+                containerQuery="true">
+                <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.fotos" type="XML" />
+
+			</l:Grid>
+
+            <l:Grid id="gridSMS" visible="{= ${tipoAlerta}==='SMS'}"
+                containerQuery="true">
+                <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.fotos" type="XML" />
+
+			</l:Grid>
+
+</Page>
+
+</core:View>

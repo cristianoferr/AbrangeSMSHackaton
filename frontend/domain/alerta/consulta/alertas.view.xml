@@ -5,16 +5,15 @@
     xmlns="sap.m" controllerName="templateHackaton.domain.alerta.consulta.alertas" 
     xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
   
-<Page showHeader="true" showNavButton="true" navButtonPress="onNavBack" title="{i18n>appTitulo}" enableScrolling="true">
+<Page showHeader="false" showNavButton="false" navButtonPress="onNavBack" title="{i18n>appTitulo}" enableScrolling="true">
 
     <Toolbar>
-        <SearchField id="searchField" placeholder="{i18n>searchPlaceholder}"  search="onSearch" value="{localModel>/searchAlertas}" showRefreshButton="false" width="100%" />
-        <Button tooltip="Filtro" icon="sap-icon://drop-down-list" press="onFilterButtonPressed" />
+        <SearchField id="searchField" placeholder="Busque Alertas"  search=".filtroAlertaService.onAplicaFiltro" value="{localModel>/searchAlertas}" showRefreshButton="false" width="100%" />
+        <Button tooltip="Filtro" icon="sap-icon://drop-down-list" press=".filtroAlertaService.onAbreDialog" />
     </Toolbar>
-     <List id="lista" selectionChange="onItemListaSelected" mode="SingleSelectMaster" items="{ path: '/Alertas', sorter: { 
-                    path: 'sigla',
-                    descending: false,
-                    group:false }}">
+     <List id="listaAlertas" selectionChange="onItemListaSelected" mode="SingleSelectMaster" items="{ path: '/Alertas', events: {
+                                change: '.calculaDistanciaAlerta'
+                            }}">
             <ObjectListItem title="{titulo}" class="quebraLinha" app:id="{id}">
                 <firstStatus>
                     <ObjectStatus text="{tipoAlerta}"  />
@@ -23,7 +22,8 @@
                     <ObjectStatus text="{path:'status',formatter:'.traduzStatus'}"  state="{path:'status', formatter:'.getStateStatus'}" />
                 </secondStatus>
                  <attributes>
-                    <ObjectAttribute  text= "Ocorrido em: {dataOcorrencia}" />
+                    <ObjectAttribute  text= "{dataOcorrencia}" />
+                    <ObjectAttribute  text= "{instalacao} {distanciaDesc}" />
                 </attributes>
             </ObjectListItem>
         </List>

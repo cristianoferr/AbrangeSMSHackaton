@@ -50,8 +50,8 @@ sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/Device'],
 				dialogService.setI18N(that.getModel('i18n'));
 
 				setTimeout(function () {
-					backendService.carregaDadosBackend();
-					that.getRouter().initialize();
+					backendService.carregaDadosBackend(function(){that.getRouter().initialize()});
+					
 				}, 500);
 
 			}

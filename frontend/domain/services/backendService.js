@@ -17,10 +17,10 @@ var backendService = (function () {
         debugger;
     }
 
-    function carregaDadosBackend() {
+    function carregaDadosBackend(callback) {
         let instalacoes = that.getModel("instalacoes").getProperty("/instalacoesGeolocalizadas")
         that.getModel("dominio").setProperty("/instalacoes", instalacoes);
-        locatorService.executaRequisicaoGeografica().then();
+        locatorService.executaRequisicaoGeografica().then(callback);
     }
 
     function bind(_that) {

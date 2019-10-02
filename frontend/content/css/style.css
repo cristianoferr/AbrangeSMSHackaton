@@ -19,22 +19,22 @@ no sapui5 novo (1.60.18) se deixar invisivel faz com que os elementos abaixo do 
   height: 0.1rem!important;
 }
 
-.requerido:before,
-.sapMListHdr:before {
-    content: "*";
-    color: #c14646;
-    font-size: 1.25rem;
-    font-weight: bold;
-    line-height: 0;
-    position: relative;
-    top: 0.15rem;
-}
-
 .escondePrimeiroFilho li:first-child{
   width: 0!important;
   padding:0;
   border:0;
   border-right: 1px solid #b2b2b2!important;
+}
+
+/*
+Usado para quebrar a linha de rótulos
+*/
+.quebraLinha,
+.quebraLinha span,
+.quebraLinha label,
+.quebraLinha div {
+    overflow: initial !important;
+    white-space: normal !important;
 }
 
 /***********************************************\

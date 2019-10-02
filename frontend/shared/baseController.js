@@ -24,10 +24,24 @@ sap.ui.define(
 			getModel,
 			formatter,
 			initValidator,
-			sincronizaTokens
+			sincronizaTokens,
+			traduzStatus,
+            getStateStatus,
 
 		}
 		);
+
+		function getStateStatus(status) {
+            if (status == constants.STATUS_APROVADO) {
+                return "Success";
+            }
+            return "Warning";
+        }
+
+        function traduzStatus(status) {
+            return this.getI18NTranslation("status." + status);
+        }
+
 
 
 		/**

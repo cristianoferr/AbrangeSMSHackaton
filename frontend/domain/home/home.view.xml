@@ -1,23 +1,20 @@
 <core:View xmlns:core="sap.ui.core" 
 	xmlns:mvc="sap.ui.core.mvc" 
 	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.f"
 	xmlns="sap.m" controllerName="templateHackaton.domain.home.home" 
 	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
-	<Page  showHeader="true" enableScrolling="true" title="{i18n>appTitulo}">
-		<headerContent>
-			<Image class="imagemCabecalhoPetrobras" src="content/images/marca_petrobras.png" />
-			<Image class="logoCabecalhoPetrobras" src="content/images/logo_petrobras.png" />
-		</headerContent>
-		<subHeader>
+	<Page  showHeader="false" class="imagemRodapeInicio" enableScrolling="true" title="{i18n>appTitulo}">
+
+		
 			<Bar id="searchBar">
 				<contentMiddle>
-					<SearchField id="searchField" placeholder="{i18n>searchPlaceholder}"  search="onSearch" value="{localModel>/searchAlertas}" showRefreshButton="false" width="80%" />
+					<SearchField placeholder="{i18n>searchPlaceholder}"  search="onSearch" value="{localModel>/searchAlertas}" showRefreshButton="false" width="80%" />
 				</contentMiddle>
 			</Bar>
-		</subHeader>
 	
 		<!-- Cards com os principais templates -->
-		<TileContainer class= "imagemRodapeInicio">
+		<TileContainer>
 			<StandardTile icon= "sap-icon://alert" 
 			 title= "Incluir Alerta SMS"
 			 info="Visão Cadastrador"

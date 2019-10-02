@@ -17,17 +17,25 @@ sap.ui.define(['templateHackaton/shared/baseController'],
 			estadoService,
 			onNavegaAlertas,
 			onNovoAlerta,
-			onSearch
+			onSearch,
+			barraSuperiorService,
+			navBack
 
 
 		});
 
+		function navBack(){
+			debugger;
+		}
 
 		/** Caso a rota routeAppHome ou alguma de suas subrotas sejam utilizadas na URL, o método abaixo é disparado. Nele deve ser realizada o bind com as informações do backend.
 		 * @function onRouteOrSubRoutesMatched
 		 * @return {type} {description}
 		 */
 		function onRouteOrSubRoutesMatched() {
+			that.setProperty("viewModel>/tituloAtual", "");
+			that.setProperty("viewModel>/backRoute", "");
+			barraSuperiorService.bind(that);
 
 		}
 
@@ -40,7 +48,11 @@ sap.ui.define(['templateHackaton/shared/baseController'],
 		}
 
 		function onSearch(evt) {
-			that.navigateToRoute("routeBuscaAlertas", { search: evt.mParameters.query });
+			if (evt.mParameters.query) {
+				that.navigateToRoute("routeBuscaAlertas", { search: evt.mParameters.query });
+			} else {
+				onNavegaAlertas();
+			}
 		}
 
 		function onOpenDialog(evt) {

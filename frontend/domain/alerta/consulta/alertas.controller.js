@@ -13,15 +13,15 @@ sap.ui.define(["templateHackaton/shared/baseController"],
                 if (that.getRouter()) {
                     that.getRouter().getRoute('routeConsultaAlertas').attachPatternMatched(
                         onRouteOrSubRoutesMatchedConsulta);
-                        that.getRouter().getRoute('routeBuscaAlertas').attachPatternMatched(
-                            onRouteOrSubRoutesMatchedBusca);    
+                    that.getRouter().getRoute('routeBuscaAlertas').attachPatternMatched(
+                        onRouteOrSubRoutesMatchedBusca);
                 }
 
             },
             onItemListaSelected,
             onNavBack,
-            traduzStatus,
-            getStateStatus
+            filtroAlertaService,
+            calculaDistanciaAlerta
 
         });
 
@@ -30,26 +30,46 @@ sap.ui.define(["templateHackaton/shared/baseController"],
          * @return {type} {description}
          */
         function onRouteOrSubRoutesMatchedConsulta() {
-
-
+            filtroAlertaService.bind(that);
+            filtroAlertaService.onAplicaFiltro();
+            that.setProperty("viewModel>/backRoute", "routeAppHome");
+            that.setProperty("viewModel>/tituloAtual", "");
         }
 
         function onRouteOrSubRoutesMatchedBusca() {
-
-
+            filtroAlertaService.bind(that);
+            filtroAlertaService.onAplicaFiltro();
+            that.setProperty("viewModel>/backRoute", "routeAppHome");
+            that.setProperty("viewModel>/tituloAtual", "");
         }
 
-        function getStateStatus(status) {
-            if (status == constants.STATUS_APROVADO) {
-                return "Success";
+        function calculaDistanciaAlerta(evt) {
+            let listaAlertas = that.getView().byId("listaAlertas");
+            let binding = listaAlertas.getBinding("items");
+            let alertas = that.getProperty("/Alertas");
+            let instalacoes = that.getProperty("dominio>/instalacoes")
+            alertas.forEach(alerta => {
+                atualizaDistanciaAlerta(alerta, instalacoes);
+            });
+            that.setProperty("/Alertas", alertas);
+        }
+
+        function atualizaDistanciaAlerta(alerta, instalacoes) {
+            alerta.distancia = 999999;
+            alerta.distanciaDesc = "";
+            let instalacao = alerta.instalacao;
+            if (instalacao) {
+                let instalacaoData = instalacoes.find(x => x.nome == instalacao);
+                if (instalacaoData) {
+                    let distancia = locatorService.getDistanceTo(instalacaoData.lat, instalacaoData.long);
+                    alerta.distancia = distancia;
+                    alerta.distanciaDesc = "(" + parseInt(distancia) + " km )";
+                }
             }
-            return "Warning";
+
         }
 
-        function traduzStatus(status) {
-            return that.getI18NTranslation("status." + status);
-        }
-
+     
         function onItemListaSelected(evt) {
             let source = evt.mParameters.listItem;
             source.setSelected(false);

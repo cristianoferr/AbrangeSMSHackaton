@@ -1,0 +1,87 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+    xmlns:l="sap.ui.layout" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+
+<Popover id="poNovoEstado"
+		title="Buscar Alertas"
+		class="sapUiContentPadding"
+		placement="auto">
+
+    <form:SimpleForm 
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			    <form:content>
+                    <core:Title text="" />
+
+                        <Label text="Texto a ser Procurado" design="Bold" />
+                        <SearchField placeholder="Busque Alertas" search=".filtroAlertaService.onAplicaFiltro" value="{localModel>/searchAlertas}" showRefreshButton="false" width="100%" />
+
+                        <Label text="Tipo de Alerta?" design="Bold" />
+                        <SegmentedButton width="100%" class="" selectedKey="{localModel>tipoAlerta}" items="{dominio>/tiposAlertasFiltro}">
+                            <items>
+                                <SegmentedButtonItem text="{dominio>nome}" key="{dominio>id}" />
+                            </items>
+                        </SegmentedButton>
+
+                        <Label text="Onde ocorreu o Alerta" design="Bold" />
+                        <MultiComboBox 
+                            class="tokenMultiLinha"
+                            showSecondaryValues="true" 
+                            selectedKeys="{localModel>instalacoes}"
+                            width="100%"
+                            items="{dominio>/instalacoes}">
+                            <core:ListItem key="{dominio>nome}" text="{dominio>nome}" additionalText="{dominio>distanciaDesc}"/>
+                        </MultiComboBox>
+
+                        <Label text="Período do Alerta" design="Bold" />
+                        <DateRangeSelection
+                            id="DRS2"
+                            dateValue="{path:'viewModel>/dataInicial'}"
+                            secondDateValue="{path:'viewModel>/dataFinal'}"
+                        />
+
+                        <Label text="Distância do Alerta (em KM)" design="Bold" />
+                        <Slider showAdvancedTooltip="true" value="{localModel>distanciaAlerta}" min="0" 
+                        max="10000" width="100%" class="sapUiMediumMarginBottom" />
+
+                    <core:Title text="" />
+                        <Label text="Ordenar por" design="Bold" />
+                        <SegmentedButton width="100%" class="" selectedKey="{localModel>campoOrdenado}" items="{dominio>/camposOrdenaveis}">
+                            <items>
+                                <SegmentedButtonItem text="{dominio>nome}" key="{dominio>id}" />
+                            </items>
+                        </SegmentedButton>
+
+                        <Label text="Na ordem" design="Bold" />
+                        <SegmentedButton width="100%" class="" selectedKey="{localModel>tipoOrdenacao}" items="{dominio>/tiposOrdenacao}">
+                            <items>
+                                <SegmentedButtonItem text="{dominio>nome}" key="{dominio>id}" />
+                            </items>
+                        </SegmentedButton>
+
+                </form:content>
+        </form:SimpleForm>
+
+    <footer>
+        <Toolbar>
+            <Button  text="Filtrar" type="Accept" icon="sap-icon://filter" press=".filtroAlertaService.onAplicaFiltro" />
+        </Toolbar>
+    </footer>
+</Popover>
+
+</core:FragmentDefinition>

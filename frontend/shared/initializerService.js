@@ -162,7 +162,7 @@ var initializerService = (function () {
         definirDeviceModel.apply(that);
         definirTituloAbaNavegador.apply(that);
         definirlinguagemConfiguradaNavegador();
-        ativarTratamentoExcecaoGlobal();
+       // ativarTratamentoExcecaoGlobal();
     }
 
     function ativarTratamentoExcecaoGlobal() {

@@ -1,0 +1,14 @@
+.titulo {
+    font-size:1.125rem!important;
+    color:black;
+    font-family:"72",Arial,Helvetica,sans-serif!important;
+}
+
+/*Deixo as tabelas parecendo texto corrido*/
+.textoNormal,.textoNormal td,.textoNormal tr{
+    border-top: unset!important;
+    background:unset!important;
+    background-color:transparent!important;
+    border:unset!important;
+    border-bottom:unset!important;
+}

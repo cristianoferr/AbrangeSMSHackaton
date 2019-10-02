@@ -6,7 +6,7 @@
 
     <List selectionChange=".regrasOuroService.onSelectRegra"
         width="100%"
-        class="sapUiSmallMarginTop"
+        class="sapUiSmallMarginTop listaRegraOuro"
         id="listaRegrasDeOuro"
         headerText="Regras de Ouro Afetadas"
         items="{viewModel>regrasOuro}"

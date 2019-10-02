@@ -20,6 +20,8 @@ var locatorService = (function () {
         getEstado,
         getPais,
         buscaSiglaEstado,
+        getDistanceFromLatLonInKm,
+        getDistanceTo,
         bind
     };
 
@@ -43,6 +45,11 @@ var locatorService = (function () {
 
     function deg2rad(deg) {
         return deg * (Math.PI / 180)
+    }
+
+
+    function getDistanceTo(lat, long) {
+        return getDistanceFromLatLonInKm(coordenada.latitude, coordenada.longitude, lat, long);
     }
 
     /**
