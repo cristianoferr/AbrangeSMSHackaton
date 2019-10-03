@@ -3,10 +3,26 @@ var barraSuperiorService = (function () {
 
     return {
         bind,
-        navBack
+        navBack,
+        countNotificacoesNaoLidas,
+        countTypeState
     }
 
-    function navBack(){
+    
+    function countNotificacoesNaoLidas(arr) {
+        if (!arr) { return ""; }
+        arr=arr.filter(x=>!x.lida);
+        if ( arr.length == 0) { return ""; }
+        return arr.length;
+    }
+    function countTypeState(arr) {
+        if (!arr) { return "Transparent"; }
+        arr=arr.filter(x=>!x.lida);
+        if ( arr.length == 0) { return "Transparent"; }
+        return "Reject";
+    }
+
+    function navBack() {
         that.navigateToRoute(that.getModel("viewModel").getProperty("/backRoute"));
     }
 

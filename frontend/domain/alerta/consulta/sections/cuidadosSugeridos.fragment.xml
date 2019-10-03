@@ -34,9 +34,9 @@
                                 	
                                 <l:VerticalLayout width="100%">
                                     <Text text="{passo}. {descricao}"/>
-                                    <l:HorizontalLayout width="100%" class="floatRight">
+                                    <!--<l:HorizontalLayout width="100%" class="floatRight">
                                         <ToggleButton icon="sap-icon://up" enabled="{= ${userVotou}!==1}" pressed="{= ${userVotou}===1}"  app:voto="1" type="Transparent" press="userVote"/>
-                                    </l:HorizontalLayout>
+                                    </l:HorizontalLayout>-->
                                 </l:VerticalLayout>
                               
                             </ColumnListItem>

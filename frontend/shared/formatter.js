@@ -11,6 +11,9 @@ var formatter = (function () {
         contemValor
     };
 
+
+
+
     function contemValor(val) {
         return val != undefined && val != "";
     }

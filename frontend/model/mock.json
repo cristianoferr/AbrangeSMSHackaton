@@ -1,4 +1,8 @@
 {
+    "notificacoes":[
+        {"lida":false},
+        {"lida":true}
+    ],
  "Alertas":
     [
         {
@@ -24,8 +28,8 @@
             "dataOcorrencia":"23/05/2017",
             "dataEmissao":"24/05/2017",
             "fotos":[
-                {"nome":"foto1.png","legenda":"Caminhão munck com tubo semelhante ao que causou o acidente"},
-                {"nome":"foto2.png","legenda":"Posição em que ficou o tubo e o acidentado após ser atingido"}
+                {"passo":1,"nome":"foto1.png","legenda":"Caminhão munck com tubo semelhante ao que causou o acidente"},
+                {"passo":2,"nome":"foto2.png","legenda":"Posição em que ficou o tubo e o acidentado após ser atingido"}
             ],
             "palavrasChave":[{"palavraChave":"impacto"},{"palavraChave":"posicionamento inseguro"},{"palavraChave":"movimentação de carga"}]
         },

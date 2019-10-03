@@ -13,7 +13,7 @@
         <Text text="{viewModel>/tituloAtual}" wrapping="false"/>
         <ToolbarSpacer />
         
-        <Button icon="sap-icon://bell" type="Transparent">
+        <Button icon="sap-icon://bell" text="{path:'/notificacoes',formatter:'.barraSuperiorService.countNotificacoesNaoLidas'}" type="{path:'/notificacoes',formatter:'.barraSuperiorService.countTypeState'}">
         </Button>
         <Button icon="sap-icon://person-placeholder" type="Transparent">
         </Button>
