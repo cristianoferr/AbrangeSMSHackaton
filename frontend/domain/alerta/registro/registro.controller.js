@@ -25,7 +25,10 @@ sap.ui.define(["templateHackaton/shared/baseController"
             backendService,
             iniciaRegistro,
             onNavBack,
-            dadosAlertaService
+            dadosAlertaService,
+            anexoService,
+            onSalvarAlerta,
+            barraSuperiorService
 
 
         });
@@ -37,6 +40,8 @@ sap.ui.define(["templateHackaton/shared/baseController"
             tipoAlertaService.bind(that);
             pendenciaService.bind(that);
             dadosAlertaService.bind(that);
+            anexoService.bind(that);
+            barraSuperiorService.bind(that);
 
             configuraRegrasValidacao();
 
@@ -45,6 +50,12 @@ sap.ui.define(["templateHackaton/shared/baseController"
             that.setProperty("viewModel>/backRoute", "routeAppHome");
             that.setProperty("viewModel>/tituloAtual", "Novo Alerta SMS");
 
+        }
+
+
+
+        function onSalvarAlerta(evt) {
+            that.navigateToRoute("routeConsultaAlertas");
         }
 
         function onNavBack() {
@@ -79,6 +90,7 @@ sap.ui.define(["templateHackaton/shared/baseController"
 
             //Regras de validação de campos
             tipoAlertaService.adicionaRegrasPendencias();
+            dadosAlertaService.adicionaRegrasPendencias();
             //anexoService.adicionaRegrasPendencias();
 
             //sempre que alguma propriedade muda é chamado o validador de pendências

@@ -159,6 +159,14 @@
                     ]
                 },
                 {
+                    "pattern": "pendentes",
+                    "name": "routeConsultaPendentes",
+                    "target": [
+                        "tgHome",
+                        "tgConsultaAlertas"
+                    ]
+                },
+                {
                     "pattern": "busca/{search}",
                     "name": "routeBuscaAlertas",
                     "target": [
@@ -240,6 +248,10 @@
                 {
                     "uri": "domain/alerta/registro/2_dadosAlerta/dadosAlertaService.js",
                     "id": "dadosAlertaService"
+                },
+                {
+                    "uri": "domain/alerta/registro/5_anexos/anexoService.js",
+                    "id": "anexoService"
                 },
                 {
                     "uri": "shared/moment.min.js",

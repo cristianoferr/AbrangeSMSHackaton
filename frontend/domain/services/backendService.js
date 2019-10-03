@@ -9,13 +9,9 @@ var backendService = (function () {
 
     return {
         bind,
-        onSalvaAlerta,
         carregaDadosBackend
     };
 
-    function onSalvaAlerta(evt) {
-        debugger;
-    }
 
     function carregaDadosBackend(callback) {
         let instalacoes = that.getModel("instalacoes").getProperty("/instalacoesGeolocalizadas")

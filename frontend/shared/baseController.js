@@ -27,10 +27,22 @@ sap.ui.define(
 			sincronizaTokens,
 			traduzStatus,
 			getStateStatus,
-			traduzTipo
+			traduzTipo,
+			traduzLido,
+			getStateTipo
 
 		}
 		);
+
+		function traduzLido(lido){
+			return lido?"Ciente":"Pendente";
+		}
+		function getStateTipo(status) {
+            if (status) {
+                return "Success";
+            }
+            return "Warning";
+		}
 
 		function getStateStatus(status) {
             if (status == constants.STATUS_APROVADO) {

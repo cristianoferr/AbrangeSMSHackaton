@@ -19,9 +19,11 @@ var dadosAlertaService = (function () {
 
     };
     function adicionaRegrasPendencias() {
-        pendenciaService.addRegra(0, "viewModel>/anomalia/numero", that.getI18NTranslation("pendencia.numero"));
-        pendenciaService.addRegra(0, "viewModel>/anomalia/titulo", that.getI18NTranslation("pendencia.titulo"));
-        pendenciaService.addRegra(0, "viewModel>/anomalia/descricao", that.getI18NTranslation("pendencia.descricao"));
+        pendenciaService.addRegra(0, "viewModel>/alerta/titulo", that.getI18NTranslation("pendencia.titulo"));
+        pendenciaService.addRegra(0, "viewModel>/alerta/descricao", that.getI18NTranslation("pendencia.descricao"));
+        pendenciaService.addRegra(0, "viewModel>/alerta/dataOcorrencia", that.getI18NTranslation("pendencia.dataOcorrencia"));
+        pendenciaService.addRegra(0, "viewModel>/alerta/dataEmissao", that.getI18NTranslation("pendencia.dataEmissao"));
+        pendenciaService.addRegra(0, "viewModel>/alerta/instalacao", that.getI18NTranslation("pendencia.instalacao"));
     }
 
     function bind(_that) {

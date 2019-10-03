@@ -8,18 +8,18 @@
 <Page showHeader="false" showNavButton="false" navButtonPress="onNavBack" title="{i18n>appTitulo}" enableScrolling="true">
 
     <Toolbar>
-        <SearchField id="searchField" placeholder="Busque Alertas"  search=".filtroAlertaService.onAplicaFiltro" value="{localModel>/searchAlertas}" showRefreshButton="false" width="100%" />
+        <SearchField id="searchField" placeholder="Busque Alertas"  search=".filtroAlertaService.onAplicaFiltro" value="{localModel>/searchAlertas}" showRefreshButton="true" width="100%" />
         <Button tooltip="Filtro" icon="sap-icon://drop-down-list" press=".filtroAlertaService.onAbreDialog" />
     </Toolbar>
      <List id="listaAlertas" selectionChange="onItemListaSelected" mode="SingleSelectMaster" items="{ path: '/Alertas', events: {
                                 change: '.calculaDistanciaAlerta'
                             }}">
-            <ObjectListItem title="{titulo}" class="quebraLinha" app:id="{id}">
+            <ObjectListItem title="{titulo}" class="" app:id="{id}">
                 <firstStatus>
                     <ObjectStatus text="{tipoAlerta}"  />
                 </firstStatus>
                 <secondStatus>
-                    <ObjectStatus text="{path:'status',formatter:'.traduzStatus'}"  state="{path:'status', formatter:'.getStateStatus'}" />
+                    <ObjectStatus text="{path:'lido',formatter:'.traduzLido'}"  state="{path:'lido', formatter:'.getStateTipo'}" />
                 </secondStatus>
                  <attributes>
                     <ObjectAttribute  text= "{dataOcorrencia}" />

@@ -38,6 +38,13 @@
                             </items>
                         </SegmentedButton>
 
+                        <Label text="Status do Alerta" design="Bold" />
+                        <SegmentedButton width="100%" class="" selectedKey="{localModel>statusAlerta}" items="{dominio>/statusAlerta}">
+                            <items>
+                                <SegmentedButtonItem text="{dominio>nome}" key="{dominio>id}" />
+                            </items>
+                        </SegmentedButton>
+
                         <Label text="Onde ocorreu o Alerta" design="Bold" />
                         <MultiComboBox 
                             class="tokenMultiLinha"

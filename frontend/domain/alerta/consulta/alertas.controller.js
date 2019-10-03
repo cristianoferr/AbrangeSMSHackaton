@@ -15,6 +15,12 @@ sap.ui.define(["templateHackaton/shared/baseController"],
                         onRouteOrSubRoutesMatchedConsulta);
                     that.getRouter().getRoute('routeBuscaAlertas').attachPatternMatched(
                         onRouteOrSubRoutesMatchedBusca);
+                    that.getRouter().getRoute('routeConsultaPendentes').attachPatternMatched(
+                        onRouteOrSubRoutesMatchedPendente);
+
+                    that.getRouter().getRoute('routeConsultaAlerta').attachPatternMatched(
+                        onRouteOrSubRoutesMatchedAlerta);
+
                 }
 
             },
@@ -24,6 +30,24 @@ sap.ui.define(["templateHackaton/shared/baseController"],
             calculaDistanciaAlerta
 
         });
+
+        /** Caso a rota routeAppHome ou alguma de suas subrotas sejam utilizadas na URL, o método abaixo é disparado. Nele deve ser realizada o bind com as informações do backend.
+         * @function onRouteOrSubRoutesMatchedPendente
+         * @return {type} {description}
+         */
+        function onRouteOrSubRoutesMatchedPendente() {
+            filtroAlertaService.bind(that);
+            that.setProperty("viewModel>/backRoute", "routeAppHome");
+            that.setProperty("viewModel>/tituloAtual", "Alertas Pendentes");
+            filtroAlertaService.resetFiltro();
+            that.setProperty("localModel>/filtros/statusAlerta", "pendente");
+            filtroAlertaService.onAplicaFiltro();
+        }
+
+        function onRouteOrSubRoutesMatchedAlerta() {
+            filtroAlertaService.bind(that);
+            filtroAlertaService.onAplicaFiltro();
+        }
 
         /** Caso a rota routeAppHome ou alguma de suas subrotas sejam utilizadas na URL, o método abaixo é disparado. Nele deve ser realizada o bind com as informações do backend.
          * @function onRouteOrSubRoutesMatched

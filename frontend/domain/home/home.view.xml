@@ -6,7 +6,7 @@
 	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
 	<Page  showHeader="false" class="imagemRodapeInicio" enableScrolling="true" title="{i18n>appTitulo}">
 
-		
+		<core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.barraSuperior" type="XML" />
 			<Bar id="searchBar">
 				<contentMiddle>
 					<SearchField placeholder="{i18n>searchPlaceholder}"  search="onSearch" value="{localModel>/searchAlertas}" showRefreshButton="false" width="80%" />

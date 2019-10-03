@@ -40,8 +40,8 @@
                             class="tokenMultiLinha"
                             selectedKeys="{viewModel>publicoAlvo}"
                             width="100%"
-                            items="{dominio>/Orgaos}">
-                            <core:Item key="{dominio>OrgaoPetrobras}" text="{dominio>OrgaoPetrobras}"/>
+                            items="{/Orgaos}">
+                            <core:Item key="{OrgaoPetrobras}" text="{OrgaoPetrobras}"/>
                         </MultiComboBox>
                 </form:content>
         </form:SimpleForm>

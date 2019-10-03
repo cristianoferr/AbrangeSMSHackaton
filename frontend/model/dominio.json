@@ -9,6 +9,12 @@
         {"id":"decrescente","nome":"Decrescente"}
     ],
 
+    "statusAlerta":[
+        {"id":"ambos","nome":"Ambos"},
+        {"id":"pendente","nome":"Pendente"},
+        {"id":"ciente","nome":"Ciente"}
+    ],
+
     "tiposAlertasFiltro":[
         {"id":null,"nome":"Ambos"},
         {"id":"PRELIMINAR","nome":"Preliminar"},
@@ -20,17 +26,17 @@
         {"nome":"Alerta SMS","icone":"anomalias/incidente.png","id":"SMS","visible":true}
     ]   ,
     "regrasDeOuro":[
-        {"nome":"Atenção às Mudanças","icone":"AtencaoMudancas.png"},
-        {"nome":"Atmosferas Explosivas","icone":"AtmosferaExplosiva.png"},
-        {"nome":"Álcool e outras drogas","icone":"AlcoolDrogras.png"},
-        {"nome":"Equipamentos de Proteção Individual","icone":"EPI.png"},
-        {"nome":"Espaço Confinado","icone":"EspacoConfinado.png"},
-        {"nome":"Isolamento de Energias","icone":"IsolamentoEnergias.png"},
-        {"nome":"Permissão para Trabalho","icone":"PermissaoTrabalho.png"},
-        {"nome":"Posicionamento Seguro","icone":"PosicionamentoSeguro.png"},
-        {"nome":"Segurança no Trânsito","icone":"SegurancaTransito.png"},
-        {"nome":"Trabalho em Altura","icone":"TrabalhoAltura.png"},
-        {"nome":"Não se Aplica","icone":"NA.png"}
+        {"nome":"Atenção às Mudanças","icone":"AtencaoMudancas.png","descricao":"Fique atento aos riscos das mudanças. Somente realize qualquer mudança que envolva pessoas, instalações, materiais ou procedimentos após análise e autorização."},
+        {"nome":"Atmosferas Explosivas","icone":"AtmosferaExplosiva.png","descricao":"Nunca entre em local com atmosfera explosiva."},
+        {"nome":"Álcool e outras drogas","icone":"AlcoolDrogras.png","descricao":"Nunca trabalhe sob efeito de álcool ou outras drogas."},
+        {"nome":"Equipamentos de Proteção Individual","icone":"EPI.png","descricao":"Use sempre o EPIs conforme recomendado."},
+        {"nome":"Espaço Confinado","icone":"EspacoConfinado.png","descricao":"Só entre em espaço confinado se autorizado, equipado e com treinamento específico"},
+        {"nome":"Isolamento de Energias","icone":"IsolamentoEnergias.png","descricao":"Somente execute trabalhos em equipamentos ou instalações após certificar-se de que todas as fontes de energia tenham sido isoladas de forma segura."},
+        {"nome":"Permissão para Trabalho","icone":"PermissaoTrabalho.png","descricao":"Somente trabalhe com Permissão para o Trabalho válida, liberada no campo e de seu total entendimento"},
+        {"nome":"Posicionamento Seguro","icone":"PosicionamentoSeguro.png","descricao":"Não acesse área isolada. Nunca se posicione sob uma carga suspensa ou entre veículos, parados ou em movimento. Mantenha-se sempre em locais seguros e protegidos."},
+        {"nome":"Segurança no Trânsito","icone":"SegurancaTransito.png","descricao":"Respeite as leis de trânsito e pratique direção defensiva. Use o cinto de segurança, respeite os limites de velocidade, não use celular e se beber não dirija."},
+        {"nome":"Trabalho em Altura","icone":"TrabalhoAltura.png","descricao":"Somente execute trabalhos em altura com a utilização de cinto de segurança fixado em local seguro e previamento determinado."},
+        {"nome":"Não se Aplica","icone":"NA.png","descricao":"Não se Aplica"}
    ]
 }
 

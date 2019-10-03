@@ -5,7 +5,8 @@ var filtroAlertaService = (function () {
         bind,
         onFechaDialogo,
         onAbreDialog,
-        onAplicaFiltro
+        onAplicaFiltro,
+        resetFiltro
 
     }
 
@@ -35,6 +36,10 @@ var filtroAlertaService = (function () {
         }
 
         buscaTexto(textoBusca, filtroFinal);
+
+        if (filtros.statusAlerta != "ambos") {
+            filtroFinal.aFilters.push(new sap.ui.model.Filter("lido", sap.ui.model.FilterOperator.EQ, filtros.statusAlerta == "ciente"));
+        }
 
 
         if (filtros.instalacoes.length > 0) {
@@ -134,6 +139,16 @@ var filtroAlertaService = (function () {
         that._filtraAlertas.close();
     }
 
+    function resetFiltro() {
+        let filtroInicial = {
+            distanciaAlerta: 10000,
+            instalacoes: [],
+            campoOrdenado: "id",
+            tipoOrdenacao: constants.TIPO_ORDENACAO_DECRESCENTE
+        };
+        that.setProperty("localModel>/filtros", filtroInicial);
+    }
+
     /**
      * faz o bind com o controller
      * @param {*} _that 
@@ -141,13 +156,8 @@ var filtroAlertaService = (function () {
     function bind(_that) {
         that = _that;
         if (!that.getProperty("localModel>/filtros")) {
-            let filtroInicial = {
-                distanciaAlerta: 10000,
-                instalacoes: [],
-                campoOrdenado: "id",
-                tipoOrdenacao: constants.TIPO_ORDENACAO_DECRESCENTE
-            };
-            that.setProperty("localModel>/filtros", filtroInicial);
+            resetFiltro();
+
         }
     }
 

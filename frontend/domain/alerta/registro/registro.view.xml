@@ -6,6 +6,7 @@
     xmlns:mvc="sap.ui.core.mvc" 
     xmlns="sap.m">
     <Page id="pageSolicitacao" showHeader="false" class="sapUiStdPage MasterButton" showNavButton="false" title="Novo Alerta SMS" navButtonPress="onNavBack">
+        <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.barraSuperior" type="XML" />
         <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.1_tipoAlerta.tipoAlerta" type="XML" />
         
         <Panel visible="{= ${viewModel>/alerta/tipoAlerta}!==null}" headerText="Registro" expandable="false">
@@ -14,14 +15,15 @@
             <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.2_dadosAlerta.dadosSMS" type="XML" />
             <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.3_regrasOuro.regrasOuro" type="XML" />
             <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.4_rodape.rodape" type="XML" />
+            <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.5_anexos.anexos" type="XML" />
         </Panel>
         <footer>
-            <OverflowToolbar visible="{= ${viewModel>/alerta/tipoAlerta}!==null}">
-                <Button icon="sap-icon://message-popup" visible="{= !${viewModel>/pendenciaOk}}" text="{viewModel>/pendenciaCount} {i18n>acao.pendencias} " type="{path:'viewModel>/pendenciaCount',formatter:'.formatter.getTypePendenciaCount'}" press=".pendenciaService.handlePendenciaViewPress"/>
-                <Button type="Emphasized" icon="sap-icon://accept" enabled="{viewModel>/pendenciaOk}" text="Enviar para Aprovação" press=".backendService.onSalvarAlerta"/>
-                
-                <ToolbarSpacer/>
-            </OverflowToolbar>
+        <OverflowToolbar visible="{= ${viewModel>/alerta/tipoAlerta}!==null}">
+            <Button icon="sap-icon://message-popup" visible="{= !${viewModel>/pendenciaOk}}" text="" type="{path:'viewModel>/pendenciaCount',formatter:'.formatter.getTypePendenciaCount'}" press=".pendenciaService.handlePendenciaViewPress"/>
+            <Button type="Emphasized" icon="sap-icon://accept" enabled="{viewModel>/pendenciaOk}" text="Enviar para Aprovação" press="onSalvarAlerta"/>
+            
+            <ToolbarSpacer/>
+        </OverflowToolbar>
         </footer>
     </Page>
 </mvc:View> 

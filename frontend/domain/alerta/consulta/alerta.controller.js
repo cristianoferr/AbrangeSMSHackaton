@@ -18,7 +18,10 @@ sap.ui.define(["templateHackaton/shared/baseController"],
 
             },
             juntaTexto,
-            userVote
+            userVote,
+            buscaImagemRegraOuro,
+            buscaDescricaoRegraOuro,
+            usuarioCiente
 
         });
 
@@ -29,7 +32,9 @@ sap.ui.define(["templateHackaton/shared/baseController"],
          * @return {type} {description}
          */
         function onRouteOrSubRoutesMatched(event) {
-            that.getView().bindElement({ path: `/Alertas/${event.getParameters().arguments.id}/` });
+            let path = `/Alertas/${event.getParameters().arguments.id}/`;
+            that.path = path;
+            that.getView().bindElement({ path: path });
             let tipo = "tipoAlerta." + that.getProperty(`/Alertas/${event.getParameters().arguments.id}/tipoAlerta`);
             that.setProperty("viewModel>/tituloAtual", that.getI18NTranslation(tipo));
             if (that.getProperty("device>/isPhone")) {
@@ -38,7 +43,52 @@ sap.ui.define(["templateHackaton/shared/baseController"],
                 that.setProperty("viewModel>/backRoute", "routeAppHome");
 
             }
+            mostraTags();
             sap.that = that;
+
+            that.setProperty("viewModel>/usuarioPrecisaDarCiencia", !that.getProperty(path + "/lido"));
+        }
+
+        function usuarioCiente() {
+            that.setProperty(that.path + "/lido", true);
+            that.setProperty(that.path, that.getProperty(that.path));
+        }
+
+        function mostraTags() {
+            let path = that.getView().getBindingContext().sPath;
+            var panel = that.getView().byId("panelTags");
+            panel.removeAllContent();
+            let tags = that.getProperty(path + "/palavrasChave");
+            var html = "";
+            for (var i = 0; i < tags.length; i++) {
+                html = html + `<a href="#" class="tag" title="${tags[i].palavraChave}">${tags[i].palavraChave}</a>`;
+            }
+            if (html != "") {
+                var oHTML = new sap.ui.core.HTML();
+                oHTML.setContent(html);
+                panel.insertContent(oHTML);
+            }
+
+        }
+
+        function buscaImagemRegraOuro(nomeRegraOuro) {
+            if (!nomeRegraOuro) return "";
+            let regrasDominio = that.getProperty("dominio>/regrasDeOuro");
+            let regra = regrasDominio.find(x => x.nome == nomeRegraOuro);
+            if (regra) {
+                return regra.icone;
+            }
+            return "";
+        }
+
+        function buscaDescricaoRegraOuro(nomeRegraOuro) {
+            if (!nomeRegraOuro) return "";
+            let regrasDominio = that.getProperty("dominio>/regrasDeOuro");
+            let regra = regrasDominio.find(x => x.nome == nomeRegraOuro);
+            if (regra) {
+                return regra.descricao;
+            }
+            return "";
         }
 
         function userVote(evt) {

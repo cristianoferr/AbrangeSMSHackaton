@@ -1,8 +1,6 @@
 <mvc:View 
     xmlns="sap.m" 
     xmlns:core="sap.ui.core" 
-    controllerName="templateHackaton.layout.app" 
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
-    <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.barraSuperior" type="XML" />
     <App id="app"/>
 </mvc:View>

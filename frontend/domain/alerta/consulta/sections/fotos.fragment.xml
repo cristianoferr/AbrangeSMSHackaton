@@ -20,7 +20,7 @@
                                 <l:VerticalLayout width="100%">
                                     <Image src="{device>/rootPath}content/images/alertas/{nome}" />
                                     <l:HorizontalLayout>
-                                        <Label text="{passo}. " design="Bold" width="1rem"/>
+                                        <Label text="{passo} " design="Bold" width="1rem"/>
                                         <Text text="{legenda}"/>
                                     </l:HorizontalLayout>
                                 </l:VerticalLayout>
