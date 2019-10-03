@@ -15,7 +15,7 @@
             <columns>
                 <Column width="5rem" hAlign="Left" vAlign="Middle"><header><Label text="Autor"/></header></Column>
                 <Column width="5rem" hAlign="Center" vAlign="Middle" ><header><Label text="Data"/></header></Column>
-                <Column hAlign="Left"><header><Label text="Feedback Recebido"/></header></Column>
+                <Column hAlign="Left" demandPopin="true" minScreenWidth="Tablet"><header><Label text="Feedback Recebido"/></header></Column>
             </columns>
             <ColumnListItem >
                     
