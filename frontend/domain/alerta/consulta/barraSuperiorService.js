@@ -20,10 +20,9 @@ var barraSuperiorService = (function () {
         if ( arr.length == 0) { return ""; }
         return arr.length;
     }
-    function countTypeState(arr) {
-        if (!arr) { return "Transparent"; }
-        arr=arr.filter(x=>!x.lido);
-        if ( arr.length == 0) { return "Transparent"; }
+    function countTypeState(count) {
+        if (!count) { return "Transparent"; }
+        if ( count == 0) { return "Transparent"; }
         return "Reject";
     }
 

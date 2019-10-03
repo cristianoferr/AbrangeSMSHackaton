@@ -26,7 +26,7 @@
 		</attributes>
         <statuses>
       	    <ObjectStatus
-                text="{path:'status',formatter:'.traduzStatus'}"  state="{path:'status', formatter:'.getStateStatus'}" />
+                text="{path:'lido',formatter:'.traduzLido'}"  state="{path:'lido', formatter:'.getStateTipo'}" />
         </statuses>
     </ObjectHeader>
     

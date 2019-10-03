@@ -6,6 +6,7 @@
   .ajustaTipos li{
     height:5rem !important;
     float: left!important;
+    font-size: 2rem!important;
     display: inline-flex;
   }
   

@@ -14,7 +14,7 @@
         <ToolbarSpacer />
         
         
-        <Button icon="sap-icon://bell" press=".barraSuperiorService.onListaPendentes" text="{path:'/Alertas',formatter:'.barraSuperiorService.countNotificacoesNaoLidas'}" type="{path:'/Alertas',formatter:'.barraSuperiorService.countTypeState'}">
+        <Button icon="sap-icon://bell" press=".barraSuperiorService.onListaPendentes" text="{viewModel>/AlertaCount}" type="{path:'viewModel>/AlertaCount',formatter:'.barraSuperiorService.countTypeState'}">
         </Button>
         <Button icon="sap-icon://person-placeholder" type="Transparent">
         </Button>

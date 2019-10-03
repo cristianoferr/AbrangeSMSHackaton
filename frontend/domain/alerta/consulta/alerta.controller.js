@@ -51,9 +51,10 @@ sap.ui.define(["templateHackaton/shared/baseController"],
 
         function usuarioCiente() {
             that.setProperty(that.path + "/lido", true);
-            that.setProperty(that.path, that.getProperty(that.path));
+            backendService.atualizaPendenciaCount();
         }
 
+      
         function mostraTags() {
             let path = that.getView().getBindingContext().sPath;
             var panel = that.getView().byId("panelTags");

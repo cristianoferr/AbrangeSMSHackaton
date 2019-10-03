@@ -42,6 +42,7 @@ sap.ui.define(["templateHackaton/shared/baseController"
             dadosAlertaService.bind(that);
             anexoService.bind(that);
             barraSuperiorService.bind(that);
+            backendService.bind(that);
 
             configuraRegrasValidacao();
 
@@ -55,7 +56,7 @@ sap.ui.define(["templateHackaton/shared/baseController"
 
 
         function onSalvarAlerta(evt) {
-            that.navigateToRoute("routeConsultaAlertas");
+            that.navigateToRoute("routeAppHome");
         }
 
         function onNavBack() {

@@ -4,7 +4,7 @@
     xmlns:form="sap.ui.layout.form" 
     xmlns:core="sap.ui.core">
    
-        <UploadCollection id="UploadCollection" noDataText="Adicione arquivos arrastando" noDataDescription=" " instantUpload="false" maximumFilenameLength="120" multiple="false" showSeparators="All" change=".anexoService.onChange"  fileDeleted=".anexoService.onDeleteArquivoASerEnviado" uploadEnabled="true" items="{}" mode="SingleSelectMaster">
+        <UploadCollection id="UploadCollection" noDataText="Adicione arquivos arrastando até aqui" noDataDescription=" " instantUpload="false" maximumFilenameLength="120" multiple="false" showSeparators="All" change=".anexoService.onChange"  fileDeleted=".anexoService.onDeleteArquivoASerEnviado" uploadEnabled="true" items="{}" mode="SingleSelectMaster">
             <items>
                 <UploadCollectionItem  enableEdit="false" enableDelete="true" visibleDelete="true" visibleEdit="false" selected="false">
                     <attributes></attributes>

@@ -9,9 +9,16 @@ var backendService = (function () {
 
     return {
         bind,
-        carregaDadosBackend
+        carregaDadosBackend,
+        atualizaPendenciaCount
     };
 
+    function atualizaPendenciaCount() {
+        if (that.getModel().getProperty("/Alertas")) {
+            let alertaCount = that.getProperty("/Alertas").filter(x => !x.lido);
+            that.setProperty("viewModel>/AlertaCount", alertaCount.length);
+        }
+    }
 
     function carregaDadosBackend(callback) {
         let instalacoes = that.getModel("instalacoes").getProperty("/instalacoesGeolocalizadas")
@@ -21,7 +28,7 @@ var backendService = (function () {
 
     function bind(_that) {
         that = _that;
-
+        atualizaPendenciaCount();
     }
 
 })();

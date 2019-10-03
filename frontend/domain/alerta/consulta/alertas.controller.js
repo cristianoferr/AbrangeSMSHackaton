@@ -37,6 +37,7 @@ sap.ui.define(["templateHackaton/shared/baseController"],
          */
         function onRouteOrSubRoutesMatchedPendente() {
             filtroAlertaService.bind(that);
+            backendService.bind(that);
             that.setProperty("viewModel>/backRoute", "routeAppHome");
             that.setProperty("viewModel>/tituloAtual", "Alertas Pendentes");
             filtroAlertaService.resetFiltro();
@@ -46,6 +47,7 @@ sap.ui.define(["templateHackaton/shared/baseController"],
 
         function onRouteOrSubRoutesMatchedAlerta() {
             filtroAlertaService.bind(that);
+            backendService.bind(that);
             filtroAlertaService.onAplicaFiltro();
         }
 
@@ -56,6 +58,7 @@ sap.ui.define(["templateHackaton/shared/baseController"],
         function onRouteOrSubRoutesMatchedConsulta() {
             filtroAlertaService.bind(that);
             filtroAlertaService.onAplicaFiltro();
+            backendService.bind(that);
             that.setProperty("viewModel>/backRoute", "routeAppHome");
             that.setProperty("viewModel>/tituloAtual", "Consultas Alertas");
         }
@@ -63,6 +66,7 @@ sap.ui.define(["templateHackaton/shared/baseController"],
         function onRouteOrSubRoutesMatchedBusca() {
             filtroAlertaService.bind(that);
             filtroAlertaService.onAplicaFiltro();
+            backendService.bind(that);
             that.setProperty("viewModel>/backRoute", "routeAppHome");
             that.setProperty("viewModel>/tituloAtual", "Busca Alertas");
         }

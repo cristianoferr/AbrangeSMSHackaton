@@ -18,15 +18,10 @@ sap.ui.define(['templateHackaton/shared/baseController'],
 			onNavegaAlertas,
 			onNovoAlerta,
 			onSearch,
-			barraSuperiorService,
-			navBack
+			barraSuperiorService
 
 
 		});
-
-		function navBack() {
-			debugger;
-		}
 
 		/** Caso a rota routeAppHome ou alguma de suas subrotas sejam utilizadas na URL, o método abaixo é disparado. Nele deve ser realizada o bind com as informações do backend.
 		 * @function onRouteOrSubRoutesMatched
@@ -36,6 +31,7 @@ sap.ui.define(['templateHackaton/shared/baseController'],
 			that.setProperty("viewModel>/tituloAtual", that.getI18NTranslation("appTitulo"));
 			that.setProperty("viewModel>/backRoute", "");
 			barraSuperiorService.bind(that);
+			backendService.bind(that);
 
 		}
 

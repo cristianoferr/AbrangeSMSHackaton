@@ -143,6 +143,7 @@ var filtroAlertaService = (function () {
         let filtroInicial = {
             distanciaAlerta: 10000,
             instalacoes: [],
+            statusAlerta : "ambos", 
             campoOrdenado: "id",
             tipoOrdenacao: constants.TIPO_ORDENACAO_DECRESCENTE
         };
@@ -155,10 +156,10 @@ var filtroAlertaService = (function () {
      */
     function bind(_that) {
         that = _that;
-        if (!that.getProperty("localModel>/filtros")) {
+        //if (!that.getProperty("localModel>/filtros")) {
             resetFiltro();
 
-        }
+            //}
     }
 
 })();
