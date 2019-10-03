@@ -24,7 +24,7 @@ sap.ui.define(['templateHackaton/shared/baseController'],
 
 		});
 
-		function navBack(){
+		function navBack() {
 			debugger;
 		}
 
@@ -33,7 +33,7 @@ sap.ui.define(['templateHackaton/shared/baseController'],
 		 * @return {type} {description}
 		 */
 		function onRouteOrSubRoutesMatched() {
-			that.setProperty("viewModel>/tituloAtual", "");
+			that.setProperty("viewModel>/tituloAtual", that.getI18NTranslation("appTitulo"));
 			that.setProperty("viewModel>/backRoute", "");
 			barraSuperiorService.bind(that);
 

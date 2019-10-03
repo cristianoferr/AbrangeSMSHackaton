@@ -2,6 +2,7 @@
     xmlns:mvc="sap.ui.core.mvc" 
     xmlns:l="sap.ui.layout" 
     xmlns:form="sap.ui.layout.form"
+    xmlns:tnt="sap.tnt"
     xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
     xmlns="sap.m" controllerName="templateHackaton.domain.alerta.consulta.alerta" 
     xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
@@ -10,6 +11,9 @@
     <ObjectHeader id="oh1"
       title="{titulo}"
         backgroundDesign="Translucent">
+        <attributes>
+			<ObjectAttribute text="{path:'tipoAlerta',formatter:'.traduzTipo'}" />
+		</attributes>
         <statuses>
       	    <ObjectStatus
                 text="{path:'status',formatter:'.traduzStatus'}"  state="{path:'status', formatter:'.getStateStatus'}" />
@@ -17,7 +21,7 @@
     </ObjectHeader>
 
     <l:VerticalLayout>
-        <Label class="titulo" text="O QUE ACONTECEU:" design="Normal" />
+        <Label class="titulo" text="O QUE ACONTECEU" design="Normal" />
         <Text text="{descricao}"/>
     </l:VerticalLayout>
 

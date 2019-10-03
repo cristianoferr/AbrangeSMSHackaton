@@ -5,13 +5,7 @@
     xmlns:l="sap.ui.layout" 
     xmlns:mvc="sap.ui.core.mvc" 
     xmlns="sap.m">
-    <Page id="pageSolicitacao" class="sapUiStdPage MasterButton quebraLinha" showNavButton="true" title="Novo Alerta SMS" navButtonPress="onNavBack">
-        <headerContent>
-            <Image class="imagemCabecalhoPetrobras" src="{device>/rootPath}content/images/marca_petrobras.png" />
-            <Image class="logoCabecalhoPetrobras" src="{device>/rootPath}content/images/logo_petrobras.png" />
-        </headerContent>
-        
-        
+    <Page id="pageSolicitacao" showHeader="false" class="sapUiStdPage MasterButton" showNavButton="false" title="Novo Alerta SMS" navButtonPress="onNavBack">
         <core:Fragment fragmentName="templateHackaton.domain.alerta.registro.1_tipoAlerta.tipoAlerta" type="XML" />
         
         <Panel visible="{= ${viewModel>/alerta/tipoAlerta}!==null}" headerText="Registro" expandable="false">

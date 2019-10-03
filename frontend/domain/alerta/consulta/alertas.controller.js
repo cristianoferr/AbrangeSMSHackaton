@@ -33,14 +33,14 @@ sap.ui.define(["templateHackaton/shared/baseController"],
             filtroAlertaService.bind(that);
             filtroAlertaService.onAplicaFiltro();
             that.setProperty("viewModel>/backRoute", "routeAppHome");
-            that.setProperty("viewModel>/tituloAtual", "");
+            that.setProperty("viewModel>/tituloAtual", "Consultas Alertas");
         }
 
         function onRouteOrSubRoutesMatchedBusca() {
             filtroAlertaService.bind(that);
             filtroAlertaService.onAplicaFiltro();
             that.setProperty("viewModel>/backRoute", "routeAppHome");
-            that.setProperty("viewModel>/tituloAtual", "");
+            that.setProperty("viewModel>/tituloAtual", "Busca Alertas");
         }
 
         function calculaDistanciaAlerta(evt) {
@@ -69,7 +69,7 @@ sap.ui.define(["templateHackaton/shared/baseController"],
 
         }
 
-     
+
         function onItemListaSelected(evt) {
             let source = evt.mParameters.listItem;
             source.setSelected(false);

@@ -1,3 +1,13 @@
+.floatRight{
+    float:right;
+    
+}
+
+.voteCounter,.voteCounter div,.voteCounter input{
+    width: 2.5rem!important;
+    min-width: 2.5rem!important;
+}
+
 .titulo {
     font-size:1.125rem!important;
     color:black;

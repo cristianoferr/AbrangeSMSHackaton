@@ -143,7 +143,9 @@ var filtroAlertaService = (function () {
         if (!that.getProperty("localModel>/filtros")) {
             let filtroInicial = {
                 distanciaAlerta: 10000,
-                instalacoes: []
+                instalacoes: [],
+                campoOrdenado: "id",
+                tipoOrdenacao: constants.TIPO_ORDENACAO_DECRESCENTE
             };
             that.setProperty("localModel>/filtros", filtroInicial);
         }

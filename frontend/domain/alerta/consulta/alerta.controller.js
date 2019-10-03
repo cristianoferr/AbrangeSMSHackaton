@@ -17,9 +17,11 @@ sap.ui.define(["templateHackaton/shared/baseController"],
 
 
             },
-            juntaTexto
+            juntaTexto,
+            userVote
 
         });
+
 
 
         /** Caso a rota routeAppHome ou alguma de suas subrotas sejam utilizadas na URL, o método abaixo é disparado. Nele deve ser realizada o bind com as informações do backend.
@@ -30,7 +32,23 @@ sap.ui.define(["templateHackaton/shared/baseController"],
             that.getView().bindElement({ path: `/Alertas/${event.getParameters().arguments.id}/` });
             let tipo = "tipoAlerta." + that.getProperty(`/Alertas/${event.getParameters().arguments.id}/tipoAlerta`);
             that.setProperty("viewModel>/tituloAtual", that.getI18NTranslation(tipo));
-            that.setProperty("viewModel>/backRoute", "routeConsultaAlertas");
+            if (that.getProperty("device>/isPhone")) {
+                that.setProperty("viewModel>/backRoute", "routeConsultaAlertas");
+            } else {
+                that.setProperty("viewModel>/backRoute", "routeAppHome");
+
+            }
+            sap.that = that;
+        }
+
+        function userVote(evt) {
+            let source = evt.oSource;
+            let userVoto = parseInt(source.data().voto);
+            let path = source.getBindingContext().sPath;
+            that.setProperty(path + "/userVotou", userVoto);
+            let qtdVotos = that.getProperty(path + "/votos");
+            qtdVotos += userVoto;
+            that.setProperty(path + "/votos", qtdVotos);
         }
 
         function juntaTexto(array) {
@@ -38,7 +56,7 @@ sap.ui.define(["templateHackaton/shared/baseController"],
                 return "";
             }
             let saida = "";
-            return array.map(x => { return (x.passo ? x.passo + ". " : " ") + x.descricao+"\n\n" });
+            return array.map(x => { return (x.passo ? x.passo + ". " : " ") + x.descricao + "\n\n" });
         }
 
 

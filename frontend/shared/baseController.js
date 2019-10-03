@@ -26,7 +26,8 @@ sap.ui.define(
 			initValidator,
 			sincronizaTokens,
 			traduzStatus,
-            getStateStatus,
+			getStateStatus,
+			traduzTipo
 
 		}
 		);
@@ -36,6 +37,11 @@ sap.ui.define(
                 return "Success";
             }
             return "Warning";
+		}
+		
+		
+		function traduzTipo(status) {
+            return this.getI18NTranslation("tipoAlerta." + status);
         }
 
         function traduzStatus(status) {

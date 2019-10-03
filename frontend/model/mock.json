@@ -12,9 +12,9 @@
             
             "cuidados":
                 [
-                    {"passo":1, "descricao":"Posicionar-se  em  local  seguro  durante movimentação de carga"},
-                    {"passo":2,"descricao":" Planejar   a   movimentação   de   carga alocando os equipamentos e metodologia adequados para as operações"},
-                    {"passo":3,"descricao":"Seguir  rigorosamente  os  procedimentos de  movimentação  e  desfile  de  tubos  de produção. "}
+                    {"passo":1, "votos":2, "descricao":"Posicionar-se  em  local  seguro  durante movimentação de carga"},
+                    {"passo":2,"votos":0,"descricao":" Planejar   a   movimentação   de   carga alocando os equipamentos e metodologia adequados para as operações"},
+                    {"passo":3,"votos":-5,"descricao":"Seguir  rigorosamente  os  procedimentos de  movimentação  e  desfile  de  tubos  de produção. "}
                 ],
             "acoesEmAndamento":[
                 {"descricao":"ação1"}

@@ -42,6 +42,9 @@ sap.ui.define(["templateHackaton/shared/baseController"
 
             iniciaRegistro();
 
+            that.setProperty("viewModel>/backRoute", "routeAppHome");
+            that.setProperty("viewModel>/tituloAtual", "Novo Alerta SMS");
+
         }
 
         function onNavBack() {
