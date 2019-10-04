@@ -1,0 +1,61 @@
+<core:FragmentDefinition xmlns="sap.m" 
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:cb="templateHackaton.shared.combobox"
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core">
+
+        <form:SimpleForm 
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+			    <form:content>
+
+                    <core:Title text="" />
+
+                        <Label text="Título" design="Bold" />
+                        <Input required="true" value="{viewModel>titulo}" placeholder="Qual o título do alerta?"/>
+						
+                        <Label text="O que aconteceu"  design="Bold" />
+                        <TextArea required="true" valueLiveUpdate="true" growing="{= ${viewModel>/tipoAlerta}===null?false:true}" width="100%"  value="{viewModel>descricao}" maxLength="500" rows="3" />
+
+                    <core:Title text=""  />
+                        <Label text="Data Ocorrência" design="Bold" />
+                        <DatePicker required="true" id="dtDataOcorrencia"
+                            value="{viewModel>dataOcorrencia}" valueFormat="dd-MM-yyyy" displayFormat="short" change="handleChange"
+                            class=""/>
+
+                        <Label text="Data Emissão" design="Bold" />
+                        <DatePicker required="true" id="dtDataEmissao"
+                            value="{viewModel>dataEmissao}" valueFormat="dd-MM-yyyy" displayFormat="short" change="handleChange"
+                            class=""/>
+
+						<Label text="Onde ocorreu a anomalia" design="Bold" />
+                        <cb:SearchComboBox required="true" showSecondaryValues="true" width="100%"
+                            items="{path: 'dominio>/instalacoes', sorter: { 
+                                        path: 'orderBy',
+                                        descending: false,
+                                        group:false }}" 
+                             selectedKey="{viewModel>instalacao}" placeholder="Qual a Instalação da ocorrência?">
+                            <core:ListItem key="{dominio>nome}" app:gestor_menor="{dominio>gestor_menor}" text="{dominio>nome}"  additionalText="{dominio>distanciaDesc}"/>
+                        </cb:SearchComboBox> 
+
+                        <Label text="Número do RTA" design="Bold" visible="{= ${viewModel>tipoAlerta}==='SMS'}"/>
+                        <Input visible="{= ${viewModel>tipoAlerta}==='SMS'}" required="true" value="{viewModel>titulo}" placeholder="Qual o número do RTA?"/>
+
+                </form:content>
+        </form:SimpleForm>
+      
+</core:FragmentDefinition>

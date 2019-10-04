@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="shortcut icon" href="content/images/favicon.ico" />
+
+	<!-- A aplicação não se comporta bem no IE. Logo eu forço que ela seja usada no IE9 para que o codigo que identifica o IE 9 seja executado.
+	Este codigo só funciona para dos IEs 5 a 9 está implementado logo depois do body -->
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+	<meta charset="UTF-8">
+
+
+	<title>Inicializando a aplicação...</title>
+
+	<script type="text/javascript"></script>
+	<script id="sap-ui-bootstrap" data-sap-ui-preload="async" src="resources/sap-ui-core.js" data-sap-ui-libs="sap.m"
+	 data-sap-ui-theme="sap_belize" data-sap-ui-compatVersion="edge"  data-sap-ui-appCachebuster="templateHackaton"
+	 data-sap-ui-resourceroots='{"templateHackaton": "./"}'>
+
+	</script>
+
+	<script>
+		const sapuiCoreNaoEncontrado = (typeof sap) === 'undefined';
+		if (sapuiCoreNaoEncontrado) {
+			window.location.href = 'shared/notFound/sapui5NotLoaded.html';
+		} else {
+			sap.ui.getCore().attachInit(function () {
+				sap.ui.require(["sap/ui/core/ComponentContainer"], function (ComponentContainer) {
+					new ComponentContainer({
+						name: "templateHackaton",
+						async: true,
+						manifest: true,
+						height: "100%",
+						componentCreated: function (oParams) {
+							var oComponent = oParams.getParameter("component");
+							// do something with the component instance
+						}
+					}).placeAt("content");
+				});
+			});
+		}
+	</script>
+</head>
+
+<body class="sapUiBody" id="content">
+	<!-- A aplicação não se comporta bem na última versão do IE da Petrobras e esta condicional funciona apenas para os IEs 5 e 9. Por isso eu forçei que o IE utilizasse
+	o IE9 através do atributo content do <head> -->
+	<!--[if IE]>
+		<h2>A aplicação templateHackaton é incompatível com o IE. Por favor, utilize o Firefox ou o Chrome para acessá-la.<h2 />
+	<![endif]-->
+
+	<!--[if !IE]> -->
+	<div id="over" class="overlay">
+		<div id="progress" class="loader">
+		</div>
+	</div>
+	<!-- <![endif]-->
+
+
+</body>
+
+</html>

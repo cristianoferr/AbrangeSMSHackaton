@@ -1,0 +1,61 @@
+.tagPanel h2{
+    padding:0!important;
+}
+.tagPanel div,.tagPanel{
+    padding:unset!important;
+    background-color:unset!important;
+    border-bottom:unset!important;
+    margin:unset!important;
+}
+
+.tag {
+    background:#007cc0;
+    border-radius: 3px 0 0 3px;
+    color: white;
+    display: inline-block;
+    height: 1rem;
+    line-height: 1rem;
+    padding: 0 1rem 0 1rem;
+    position: relative;
+    margin: 0 1rem 0px 0;
+    text-decoration: none;
+    font-size: 1rem!important;
+  }
+
+  .tag::before {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+    left: 10px;
+    position: absolute;
+    width: 6px;
+    top: 10px;
+  }
+  
+
+
+
+.floatRight{
+    float:right;
+    
+}
+
+.voteCounter,.voteCounter div,.voteCounter input{
+    width: 2.5rem!important;
+    min-width: 2.5rem!important;
+}
+
+.tagPanel h2,.titulo {
+    font-size:1.125rem!important;
+    color:black;
+    font-family:"72",Arial,Helvetica,sans-serif!important;
+}
+
+/*Deixo as tabelas parecendo texto corrido*/
+.textoNormal,.textoNormal td,.textoNormal tr{
+    border-top: unset!important;
+    background:unset!important;
+    background-color:transparent!important;
+    border:unset!important;
+    border-bottom:unset!important;
+}

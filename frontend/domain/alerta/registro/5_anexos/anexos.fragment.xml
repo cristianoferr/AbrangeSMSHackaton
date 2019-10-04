@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" 
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core">
+   
+        <UploadCollection id="UploadCollection" noDataText="Adicione arquivos arrastando até aqui" noDataDescription=" " instantUpload="false" maximumFilenameLength="120" multiple="false" showSeparators="All" change=".anexoService.onChange"  fileDeleted=".anexoService.onDeleteArquivoASerEnviado" uploadEnabled="true" items="{}" mode="SingleSelectMaster">
+            <items>
+                <UploadCollectionItem  enableEdit="false" enableDelete="true" visibleDelete="true" visibleEdit="false" selected="false">
+                    <attributes></attributes>
+                </UploadCollectionItem>
+            </items>
+        </UploadCollection>
+</core:FragmentDefinition>

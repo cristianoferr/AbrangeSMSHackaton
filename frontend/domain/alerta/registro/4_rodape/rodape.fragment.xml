@@ -1,0 +1,49 @@
+<core:FragmentDefinition xmlns="sap.m" 
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:cb="templateHackaton.shared.combobox"
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core">
+
+        <form:SimpleForm 
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+			    <form:content>
+                    <core:Title text=""  />
+                        <Label text="Palavras-Chave" />
+                        <MultiInput required="true" liveChange="initValidator" tokenUpdate__="sincronizaTokens"
+                            tokens="{
+                                path: 'viewModel>palavrasChave'
+                            }"  enableMultiLineMode="true" width="100%" showValueHelp="false">
+                            <tokens>
+                                <Token key="{viewModel>palavraChave}" text="{viewModel>palavra}" />
+                            </tokens> 
+                        </MultiInput>
+
+                    <core:Title text=""  />
+                        <Label text="Público Alvo desse Alerta" design="Bold" />
+                        <MultiComboBox 
+                            required="true"
+                            class="tokenMultiLinha"
+                            selectedKeys="{viewModel>publicoAlvo}"
+                            width="100%"
+                            items="{/Orgaos}">
+                            <core:Item key="{OrgaoPetrobras}" text="{OrgaoPetrobras}"/>
+                        </MultiComboBox>
+                </form:content>
+        </form:SimpleForm>
+      
+</core:FragmentDefinition>

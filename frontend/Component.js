@@ -6,7 +6,7 @@ sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/Device'],
 
 		let that;
 
-		
+
 
 		/**
 		 * Estes métodos de validação são normalmente chamados dentro de validações de campos de entrada. Por exemplo,
@@ -45,9 +45,14 @@ sap.ui.define(['sap/ui/core/UIComponent', 'sap/ui/Device'],
 				that = this;
 				UIComponent.prototype.init.apply(that, arguments);
 				initializerService.bind(that);
+				backendService.bind(that);
+				locatorService.bind(that);
 				dialogService.setI18N(that.getModel('i18n'));
 
-				that.getRouter().initialize();
+				setTimeout(function () {
+					backendService.carregaDadosBackend(function(){that.getRouter().initialize()});
+					
+				}, 500);
 
 			}
 		}

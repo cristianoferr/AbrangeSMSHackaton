@@ -25,8 +25,19 @@
                 "uri": "/api",
                 "type": "JSON"
             },
+            "init_instalacoes": {
+                "uri": "model/instalacoes.json",
+                "type": "JSON"
+            },
+            "init_mock": {
+                "uri": "model/mock.json",
+                "type": "JSON"
+            },
             "init_dominio": {
                 "uri": "model/dominio.json",
+                "type": "JSON"
+            },
+            "localModelDS": {
                 "type": "JSON"
             }
         }
@@ -77,11 +88,19 @@
                     "bundleName": "templateHackaton.i18n.i18n"
                 }
             },
+            "instalacoes": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "init_instalacoes"
+            },
             "dominio": {
                 "type": "sap.ui.model.json.JSONModel",
                 "dataSource": "init_dominio"
             },
             "": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "init_mock"
+            },
+            "_rest_": {
                 "type": "templateHackaton.shared.model.RESTModel",
                 "dataSource": "mainService",
                 "settings": {
@@ -102,6 +121,10 @@
                 "settings": {
                     "defaultBindingMode": "TwoWay"
                 }
+            },
+            "localModel": {
+                "type": "templateHackaton.shared.model.LocalStorageModel",
+                "dataSource": "localModelDS"
             }
         },
         "routing": {
@@ -117,23 +140,45 @@
             },
             "routes": [
                 {
-					"pattern": "",
-					"name": "routeAppHome",
-					"target": "tgHome"
+                    "pattern": "",
+                    "name": "routeAppHome",
+                    "target": "tgHome"
                 },
                 {
-                    "pattern": "estados",
-                    "name": "routeConsultaEstados",
+                    "pattern": "novoAlerta",
+                    "name": "routeNovoAlerta",
+                    "parent": "routeAppHome",
+                    "target": "tgNovoAlerta"
+                },
+                {
+                    "pattern": "alertas",
+                    "name": "routeConsultaAlertas",
                     "target": [
                         "tgHome",
-                        "tgConsultaEstados"
+                        "tgConsultaAlertas"
                     ]
                 },
                 {
-                    "pattern": "estado/{id}",
-                    "name": "routeConsultaEstado",
-                    "parent": "routeConsultaEstados",
-                    "target": "tgConsultaEstado"
+                    "pattern": "pendentes",
+                    "name": "routeConsultaPendentes",
+                    "target": [
+                        "tgHome",
+                        "tgConsultaAlertas"
+                    ]
+                },
+                {
+                    "pattern": "busca/{search}",
+                    "name": "routeBuscaAlertas",
+                    "target": [
+                        "tgHome",
+                        "tgConsultaAlertas"
+                    ]
+                },
+                {
+                    "pattern": "alerta/{id}",
+                    "name": "routeConsultaAlerta",
+                    "parent": "routeConsultaAlertas",
+                    "target": "tgConsultaAlerta"
                 }
             ],
             "targets": {
@@ -142,17 +187,22 @@
                     "viewName": "home",
                     "viewLevel": 1
                 },
-                "tgConsultaEstados": {
-                    "viewPath": "templateHackaton.domain.estados.consulta",
-                    "viewName": "estados",
+                "tgNovoAlerta": {
+                    "viewPath": "templateHackaton.domain.alerta.registro",
+                    "viewName": "registro",
+                    "viewLevel": 2
+                },
+                "tgConsultaAlertas": {
+                    "viewPath": "templateHackaton.domain.alerta.consulta",
+                    "viewName": "alertas",
                     "parent": "masterDetailSimplesSplitApp",
                     "controlId": "masterDetailSimplesSplitAppId",
                     "controlAggregation": "masterPages",
                     "viewLevel": 1
                 },
-                "tgConsultaEstado": {
-                    "viewPath": "templateHackaton.domain.estados.consulta",
-                    "viewName": "estado",
+                "tgConsultaAlerta": {
+                    "viewPath": "templateHackaton.domain.alerta.consulta",
+                    "viewName": "alerta",
                     "parent": "masterDetailSimplesSplitApp",
                     "controlId": "masterDetailSimplesSplitAppId",
                     "controlAggregation": "detailPages",
@@ -168,6 +218,18 @@
             "css": [
                 {
                     "uri": "content/css/style.css"
+                },
+                {
+                    "uri": "domain/home/home.css"
+                },
+                {
+                    "uri": "domain/alerta/consulta/alerta.css"
+                },
+                {
+                    "uri": "domain/alerta/registro/1_tipoAlerta/tipoAlerta.css"
+                },
+                {
+                    "uri": "domain/alerta/registro/3_regrasOuro/regrasOuro.css"
                 }
             ],
             "js": [
@@ -175,7 +237,23 @@
                     "uri": "domain/estados/estadoService.js",
                     "id": "estadoService"
                 },
-                  {
+                {
+                    "uri": "domain/alerta/consulta/filtro/filtroAlertaService.js",
+                    "id": "filtroAlertaService"
+                },
+                {
+                    "uri": "domain/alerta/registro/1_tipoAlerta/tipoAlertaService.js",
+                    "id": "tipoAlertaService"
+                },
+                {
+                    "uri": "domain/alerta/registro/2_dadosAlerta/dadosAlertaService.js",
+                    "id": "dadosAlertaService"
+                },
+                {
+                    "uri": "domain/alerta/registro/5_anexos/anexoService.js",
+                    "id": "anexoService"
+                },
+                {
                     "uri": "shared/moment.min.js",
                     "id": "momentjs"
                 },
@@ -188,6 +266,14 @@
                     "id": "formatter"
                 },
                 {
+                    "uri": "domain/services/pendenciaService.js",
+                    "id": "pendenciaService"
+                },
+                {
+                    "uri": "domain/services/backendService.js",
+                    "id": "backendService"
+                },
+                {
                     "uri": "shared/toolsService.js",
                     "id": "toolsService"
                 },
@@ -198,6 +284,14 @@
                 {
                     "uri": "shared/initializerService.js",
                     "id": "initializerService"
+                },
+                {
+                    "uri": "domain/alerta/consulta/barraSuperiorService.js",
+                    "id": "barraSuperiorService"
+                },
+                {
+                    "uri": "domain/services/locatorService.js",
+                    "id": "locatorService"
                 },
                 {
                     "uri": "shared/seguranca/userService.js",

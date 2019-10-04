@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+    xmlns:l="sap.ui.layout" 
+    xmlns:tnt="sap.tnt"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+
+    <tnt:ToolHeader>
+        <Button icon="sap-icon://nav-back" visible="{= ${viewModel>/backRoute}!==''}" type="Transparent" press=".barraSuperiorService.navBack">
+        </Button>
+        <Image class="imagemCabecalhoPetrobras" src="content/images/marca_petrobras.png" />
+        <Image class="logoCabecalhoPetrobras" src="content/images/logo_petrobras.png" />
+        <Text text="{viewModel>/tituloAtual}" wrapping="false"/>
+        <ToolbarSpacer />
+        
+        
+        <Button icon="sap-icon://bell" press=".barraSuperiorService.onListaPendentes" text="{viewModel>/AlertaCount}" type="{path:'viewModel>/AlertaCount',formatter:'.barraSuperiorService.countTypeState'}">
+        </Button>
+        <Button icon="sap-icon://person-placeholder" type="Transparent">
+        </Button>
+    </tnt:ToolHeader>
+
+</core:FragmentDefinition>

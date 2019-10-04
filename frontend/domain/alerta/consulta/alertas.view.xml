@@ -1,0 +1,40 @@
+<core:View xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+    xmlns="sap.m" controllerName="templateHackaton.domain.alerta.consulta.alertas" 
+    xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
+  
+<Page showHeader="false" showNavButton="false" navButtonPress="onNavBack" title="{i18n>appTitulo}" enableScrolling="true">
+
+    <Toolbar>
+        <SearchField id="searchField" placeholder="Busque Alertas"  search=".filtroAlertaService.onAplicaFiltro" value="{localModel>/searchAlertas}" showRefreshButton="true" width="100%" />
+        <Button tooltip="Filtro" icon="sap-icon://drop-down-list" press=".filtroAlertaService.onAbreDialog" />
+    </Toolbar>
+     <List id="listaAlertas" selectionChange="onItemListaSelected" mode="SingleSelectMaster" items="{ path: '/Alertas', events: {
+                                change: '.calculaDistanciaAlerta'
+                            }}">
+            <ObjectListItem title="{titulo}" class="" app:id="{id}">
+                <firstStatus>
+                    <ObjectStatus text="{tipoAlerta}"  />
+                </firstStatus>
+                <secondStatus>
+                    <ObjectStatus text="{path:'lido',formatter:'.traduzLido'}"  state="{path:'lido', formatter:'.getStateTipo'}" />
+                </secondStatus>
+                 <attributes>
+                    <ObjectAttribute  text= "{dataOcorrencia}" />
+                    <ObjectAttribute  text= "{instalacao} {distanciaDesc}" />
+                </attributes>
+            </ObjectListItem>
+        </List>
+       
+        <!-- Fim da Listagem mestre -->
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer/>
+               <!-- <Button icon="sap-icon://add" visible="{viewModel>/usuarioEhAuditor}" text="Nova Auditoria" press="onNovaAuditoria" type="Emphasized"/>-->
+            </OverflowToolbar>
+        </footer>
+</Page>
+
+</core:View>

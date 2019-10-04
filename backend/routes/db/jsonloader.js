@@ -1,27 +1,41 @@
 const fs = require('fs');
 
-let rawdata = fs.readFileSync(__dirname + '/../../dados/dados.json');
-let dados = JSON.parse(rawdata);
+let store = {};
+
+carrega("dados");
+carrega("instalacoes");
+carrega("orgaos");
+
+function carrega(arquivo) {
+    console.log("Carregando: " + arquivo);
+    let rawdata = fs.readFileSync(__dirname + '/../../dados/' + arquivo + '.json');
+    let dados = JSON.parse(rawdata);
+    store[arquivo] = dados;
+}
 
 //armazena o sequence de cada entidade
 let sequence = {};
-updateIndices();
 
+//atualizo todos os indices
+for (var nomePropriedade in store) {
+    //updateIndices(nomePropriedade);
+}
 
 /**
  * atualiza os ids únicos dos registros
  */
-function updateIndices() {
+function updateIndices(dados) {
     for (var nomePropriedade in dados) {
-        updateIndice(nomePropriedade);
+        updateIndice(nomePropriedade,dados);
     }
 }
 
-function updateIndice(nomePropriedade) {
+function updateIndice(nomePropriedade,dados) {
     let array = dados[nomePropriedade];
     if (!sequence[nomePropriedade]) {
         sequence[nomePropriedade] = 0;
     }
+    console.log("nomePropriedade:"+nomePropriedade+" array:"+array);
     array.forEach((x) => {
         if (!x.id) {
             x.id = ++sequence[nomePropriedade];
@@ -30,12 +44,12 @@ function updateIndice(nomePropriedade) {
 }
 
 //Função genérica que retorna os dados
-function getData(name) {
-    return dados[name];
+function getData(storeName, name) {
+    return store[storeName][name];
 }
 
-function updateData(name, newData) {
-    dados[name] = newData;
+function updateData(storeName, name, newData) {
+    store[storeName][name] = newData;
     updateIndices();
 }
 

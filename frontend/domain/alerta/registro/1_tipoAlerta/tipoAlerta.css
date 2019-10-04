@@ -1,0 +1,35 @@
+.ajustaTipos{
+    width:100% !important;
+    height:5rem !important;
+    display: contents;
+  }
+  .ajustaTipos li{
+    height:5rem !important;
+    float: left!important;
+    font-size: 1rem!important;
+    display: inline-flex;
+  }
+  
+  .ajustaTipos li:not(:first-child){
+    width: 50% !important;
+  }
+  
+  .ajustaTipos li:first-child{
+    display: none;
+  }
+  
+  .ajustaTipos img{
+    margin-top: 1rem;
+  }
+  
+  .tileSelecionado{
+    background-color: #cdd2d7!important;
+  }
+  
+  /*Telas pequenas*/
+  @media screen and (max-width: 750px) {
+   .ajustaTipos li:not(:first-child){
+    width: 50% !important;
+   }
+  
+  }

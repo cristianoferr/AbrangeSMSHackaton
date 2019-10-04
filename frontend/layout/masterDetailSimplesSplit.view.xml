@@ -1,7 +1,12 @@
 <mvc:View 
     xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core" 
+    controllerName="templateHackaton.layout.app" 
     xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
     xmlns:l="sap.ui.layout" 
     xmlns="sap.m">
-    <SplitApp id="masterDetailSimplesSplitAppId" orientationChange="onOrientationChange"></SplitApp>
+    <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.barraSuperior" type="XML" />
+    <SplitApp id="masterDetailSimplesSplitAppId" orientationChange="onOrientationChange">
+    </SplitApp>
+    
 </mvc:View>

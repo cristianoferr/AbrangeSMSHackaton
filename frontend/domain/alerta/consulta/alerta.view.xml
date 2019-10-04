@@ -1,0 +1,76 @@
+<core:View xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:form="sap.ui.layout.form"
+    xmlns:tnt="sap.tnt"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+    xmlns="sap.m" controllerName="templateHackaton.domain.alerta.consulta.alerta" 
+    xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true">
+  
+<Page  showHeader="false" enableScrolling="true" title="{titulo}">
+    <OverflowToolbar >
+        <Button type="Emphasized" icon="sap-icon://accept" text="Estou Ciente" visible="{= !${lido}}" press=".usuarioCiente"/>
+         <Button type="Transparent" 
+         icon="{device>/rootPath}content/images/iconeFeedback.png" 
+         text="Enviar Feedback" press=".enviaFeedback"/>
+         <Button type="Transparent" icon="sap-icon://print" />
+        
+        <ToolbarSpacer/>
+    </OverflowToolbar>
+    <ObjectHeader id="oh1"
+      title="{titulo}"
+        backgroundDesign="Translucent">
+        <attributes>
+			<ObjectAttribute text="{path:'tipoAlerta',formatter:'.traduzTipo'}" />
+            <ObjectAttribute text="Data Ocorrência {dataOcorrencia} em {instalacao}" />
+		</attributes>
+        <statuses>
+      	    <ObjectStatus
+                text="{path:'lido',formatter:'.traduzLido'}"  state="{path:'lido', formatter:'.getStateTipo'}" />
+        </statuses>
+    </ObjectHeader>
+    
+
+    <l:VerticalLayout>
+        <Label class="titulo" text="O QUE ACONTECEU" design="Normal" />
+        <Table width="100%" 
+            fixedLayout="false"
+            growing="false">
+            <columns>
+                <Column width="100%" hAlign="Left"></Column>
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <l:VerticalLayout width="100%">
+                        <Text text="{descricao}"/>
+                    </l:VerticalLayout>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </l:VerticalLayout>
+
+    <l:Grid id="gridPreliminar" defaultSpan="XL6 L6 M6 S12" hSpacing="0" class="sapUiSmallMarginTop" visible="{= ${tipoAlerta}==='PRELIMINAR'}"
+        containerQuery="true">
+        <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.cuidadosSugeridos" type="XML" />
+        <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.fotos" type="XML" />
+
+    </l:Grid>
+
+    <l:Grid id="gridSMS" defaultSpan="XL6 L6 M6 S12" hSpacing="0" class="sapUiSmallMarginTop"  visible="{= ${tipoAlerta}==='SMS'}"
+        containerQuery="true">
+        <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.motivos" type="XML" />
+        <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.fotos" type="XML" />
+    </l:Grid>
+    <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.comoEvitar" type="XML" />
+
+    <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.regrasDeOuro" type="XML" />
+    <panel headerText="Palavras-chave:" id="panelTags" class="titulo tagPanel"></panel>
+    <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.feedbacks" type="XML" />
+
+<panel class="sapUiLargeMarginBottom"></panel>
+
+        
+
+</Page>
+
+</core:View>

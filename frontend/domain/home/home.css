@@ -1,0 +1,44 @@
+
+/***********************************************\
+ I M A G E N S   R O D A P E
+\***********************************************/
+
+.imagemRodapeInicio,
+.imagemRodapeInformativo {
+    background-image: url(/content/images/rodape-02.png);
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: 101% 101%;
+    background-color: #ffffff;
+}
+
+@media screen and (max-width: 960px) {
+    .imagemRodapeInicio,
+    .imagemRodapeInformativo {
+        background-size: 35%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .imagemRodapeInicio,
+    .imagemRodapeInformativo {
+        background-size: 45%;
+    }
+    .imagemCabecalhoPetrobras {
+        visibility: hidden;
+        width: 0px;
+    }
+    .logoCabecalhoPetrobras {
+        margin: 0 !important;
+        padding: 0.4em !important;
+        visibility: visible;
+        width: 1.8em;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .imagemRodapeInicio,
+    .imagemRodapeInformativo {
+        background-size: 55%;
+    }
+}
