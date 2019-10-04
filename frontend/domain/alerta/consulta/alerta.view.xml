@@ -64,10 +64,10 @@
     <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.comoEvitar" type="XML" />
 
     <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.regrasDeOuro" type="XML" />
-    <panel headerText="Palavras-chave:" id="panelTags" class="titulo tagPanel"></panel>
+    <Panel headerText="Palavras-chave:" id="panelTags" class="titulo tagPanel"></Panel>
     <core:Fragment fragmentName="templateHackaton.domain.alerta.consulta.sections.feedbacks" type="XML" />
 
-<panel class="sapUiLargeMarginBottom"></panel>
+<Panel class="sapUiLargeMarginBottom"></Panel>
 
         
 
