@@ -7,7 +7,7 @@
 <Popover id="poNovoEstado"
 		title="Buscar Alertas"
 		class="sapUiContentPadding"
-		placement="auto">
+		placement="Auto">
 
     <form:SimpleForm 
 			editable="true"
